@@ -9,8 +9,8 @@
     <link rel="icon" href="./img/favicon.png">
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="WEB-INF/css/bootstrap.min.css" rel="stylesheet">
+    <link href="WEB-INF/css/navbar-fixed-top.css" rel="stylesheet">
 <title>Carros.com</title>
 </head>
 <body>
