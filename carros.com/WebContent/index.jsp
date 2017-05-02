@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="./img/favicon.png">
 
     <!-- Bootstrap core CSS -->
-    <link href="WEB-INF/css/bootstrap.min.css" rel="stylesheet">
-    <link href="WEB-INF/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/navbar-fixed-top.css" rel="stylesheet">
 <title>Carros.com</title>
 </head>
 <body>
