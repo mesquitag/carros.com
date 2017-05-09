@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Telefone {
-	
+	// Enum Criar Telefone em enum tipo; 
 	protected int id;
 	protected List<Telefone>celular = new ArrayList<Telefone>();
 	protected List<Telefone>fixo = new ArrayList<Telefone>();

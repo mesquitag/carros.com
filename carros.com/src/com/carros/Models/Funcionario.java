@@ -1,6 +1,6 @@
 package com.carros.Models;
 
-public class Funcionario {
+public class Funcionario extends Pessoa {
 
 	protected int id;
 	protected String matricula;

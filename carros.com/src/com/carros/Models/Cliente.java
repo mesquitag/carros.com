@@ -2,7 +2,7 @@ package com.carros.Models;
 
 import java.util.Date;
 
-public class Cliente {
+public class Cliente extends Pessoa {
 
 	protected int id;
 	protected String cnh;
