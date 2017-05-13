@@ -90,49 +90,38 @@
       </div>
     </nav>
 
-    <div class="container">
-
-      <!-- Main component for a primary marketing message or call to action -->
-				
-			<div class="col-xs-12 col-sm-7 col-md-6"  >
-				
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				</ol>
-
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<img src="./img/frota.jpg" alt="...">
-						<div class="carousel-caption">Os Melhores</div>
-					</div>
-					<div class="item">
-						<img src="./img/frota2.jpg" alt="">
-						<div class="carousel-caption">E mais Baratos</div>
-					</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-7 col-md-6">
+				<div class="jumbotron center-block">
+						<h2>Aluguel de Carros</h2>
+					<hr class="dl-horizontal">
+						<p> outro texto aqui</p>
 					
+					<form action="post" >
+					
+					
+					</form>
 				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-6">
+				<div class="jumbotron">
+					<div class="separated">
+						<h1>Banner aqui</h1>
+					</div>
+					<form></form>
+				</div>
+			</div>
 
-				<!-- Controls -->
-				<a class="left carousel-control" href="#carousel-example-generic"
-					role="button" data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#carousel-example-generic"
-					role="button" data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			
-		</div>      
-	
-    </div> <!-- /container -->
+		</div>
+		<!-- End div Row -->
 
 
-    <!-- Bootstrap core JavaScript
+	</div>
+	<!-- /container -->
+
+
+	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
