@@ -15,7 +15,7 @@ public class UsuarioDao {
 			try {
 				PreparedStatement pstmt = con.prepareStatement("insert into pessoa(nome,datanascimento,email,senha,cpf,rg,endereco_id,telefone_id) values(?,?,?,?,?,?,?,?) ");
 				pstmt.setString(1, cliente.getNome());
-				pstmt.setDate(2, new java.sql.Date(cliente.getDatanascimento().getTime()));
+				pstmt.setDate(2, new java.sql.Date(cliente.getDataNascimento().getTime()));
 				pstmt.setString(3, cliente.getEmail());
 				pstmt.setString(4, cliente.getSenha());
 				pstmt.setString(4, cliente.getCpf());

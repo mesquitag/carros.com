@@ -189,9 +189,13 @@
 					</div>
 					
 					<div class="form-group col-md-2" >
-					<label for="uf" class="control-label">UF</label>
-					<input id="uf" name="uf" class="form-control" type="text"
-				 	   required="required" value='<c:out value="${endereco.uf}"></c:out>'  >
+					<label for="uf" class="control-label">UF</label> 
+					<select class="form-control" id="sel1" name="enumUf">
+						<c:forEach items="${enumUfs}" var="enumUf">
+                             <option value="${enumUf.enumUf}">${enumUf}</option>
+                        </c:forEach>			
+					</select>
+
 					</div>
 					
 					<div class="form-group col-md-6" >

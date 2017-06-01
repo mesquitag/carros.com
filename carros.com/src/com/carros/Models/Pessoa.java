@@ -1,11 +1,15 @@
 package com.carros.Models;
 
+import java.util.Date;
+
 public class Pessoa {
 
 	
 	protected int id;
 	protected String nome;
 	protected String email;
+	protected String senha;
+	protected Date	  dataNascimento;
 	protected String cpf;
 	protected String rg;
 	protected Endereco endereco = new Endereco();
@@ -59,7 +63,22 @@ public class Pessoa {
 	public void setTelefone(Telefone telefone) {
 		this.telefone = telefone;
 	}
-	
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	
 	
 }

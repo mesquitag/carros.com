@@ -5,24 +5,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.carros.Dao.ClienteDao;
 import com.carros.Dao.EnderecoDao;
 import com.carros.Dao.TelefoneDao;
 import com.carros.Dao.UsuarioDao;
-import com.carros.Models.Cliente;
 import com.carros.Models.Endereco;
+import com.carros.Models.EnumUf;
 import com.carros.Models.Pessoa;
 import com.carros.Models.Telefone;
 
 
 @WebServlet("/UsuarioControl")
-public class UsuarioControl extends HttpServlet {
+public class UsuarioControl extends HttpServlet implements ServletContextListener {
 	private static final long serialVersionUID = 1L;
    private UsuarioDao usuarioDao;   
 	private EnderecoDao enderecoDao;
@@ -30,6 +32,9 @@ public class UsuarioControl extends HttpServlet {
 	private  Integer codEndereco;
 	private Integer codTelefone;
 	private static String CADUSUARIO_SUCESS = "/usuariosucess.jsp";
+	
+	
+
 	
 	/**
      * @see HttpServlet#HttpServlet()
@@ -41,8 +46,14 @@ public class UsuarioControl extends HttpServlet {
         telefoneDao = new TelefoneDao();
         codEndereco =0;
         codTelefone=0;
+        
     }
-
+    
+    public void init(ServletConfig config) throws ServletException {
+   	
+    
+    }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -64,7 +75,7 @@ public class UsuarioControl extends HttpServlet {
 		cliente.setSenha(request.getParameter("senha").toString());
 		try {
 			Date dataNascimento = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("dataNascimento"));
-			cliente.setDatanascimento(dataNascimento);
+			cliente.setDataNascimento(dataNascimento);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -78,15 +89,13 @@ public class UsuarioControl extends HttpServlet {
 		endereco.setNumero(request.getParameter("numero"));
 		endereco.setComplemento(request.getParameter("complemento"));
 		endereco.setCep(request.getParameter("cep").toString());
-		endereco.setUf(request.getParameter("uf"));
+		endereco.setUf(EnumUf.valueOf(request.getParameter("enumUf")));
 		
 		
 		// set Telefone;
 		
 		Telefone telefone = new  Telefone();
 		telefone.setTelefone(request.getParameter("telefone").toString());
-		
-		
 		String usuarioId = request.getParameter("id");
 		if(usuarioId == null || usuarioId.isEmpty()){
 			
@@ -97,8 +106,19 @@ public class UsuarioControl extends HttpServlet {
 			
 		}
 		RequestDispatcher view = request.getRequestDispatcher(CADUSUARIO_SUCESS);
-		request.setAttribute("cliente", ClienteDao.findByCpf(cliente));
+		//request.setAttribute("cliente", ClienteDao.findByCpf(cliente));
 		view.forward(request, response);
+		
+	}
+
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+				sce.getServletContext().setAttribute("enumUfs", EnumUf.values());
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent sce) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -19,7 +19,7 @@ public class EnderecoDao {
 			pstmt.setString(2, endereco.getNumero());
 			pstmt.setString(3, endereco.getComplemento());
 			pstmt.setString(4, endereco.getCep());
-			pstmt.setString(5, endereco.getUf());
+			pstmt.setString(5, endereco.getUf().name());
 			ResultSet rs = pstmt.executeQuery();
 				if(rs.next()){
 					return codigo = rs.getInt("id");

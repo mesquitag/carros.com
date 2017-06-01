@@ -7,6 +7,8 @@ import java.sql.SQLException;
 public class Conexao {
 	private static Connection conexao;
 
+	private Conexao(){}
+	
 	private static Connection conectar() {
 		try {
 			Class.forName("org.postgresql.Driver");

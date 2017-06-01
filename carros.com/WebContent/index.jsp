@@ -103,7 +103,7 @@
 								 </form>
 							</div>
 							<div class="bottom text-center">
-								Novo por aqui ? <a href="#"><b>Cadastro!</b></a>
+								Novo por aqui ? <a href="cadusuario.jsp"><b>Cadastro!</b></a>
 							</div>
 					 </div>
 				</li>
