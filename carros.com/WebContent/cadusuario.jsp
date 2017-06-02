@@ -1,3 +1,4 @@
+<%@page import="com.carros.Models.EnumEstado"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -190,9 +191,10 @@
 					
 					<div class="form-group col-md-2" >
 					<label for="uf" class="control-label">UF</label> 
-					<select class="form-control" id="sel1" name="enumUf">
-						<c:forEach items="${enumUfs}" var="enumUf">
-                             <option value="${enumUf.enumUf}">${enumUf}</option>
+					<select class="form-control" id="enumEstado" name="enumEstados">
+						<c:set var="enumEstados" value="<%=EnumEstado.values() %>" />
+						<c:forEach items="${enumEstados}" var="enumEstado">
+                             <option value="${enumEstado}" label="${enumEstado.descricao}" />
                         </c:forEach>			
 					</select>
 

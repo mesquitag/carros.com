@@ -8,7 +8,7 @@ public class Endereco {
 	protected String numero;
 	protected String complemento; 
 	protected String cep;
-	protected EnumUf	uf;
+	protected EnumEstado	uf;
 	
 	public  Endereco(){}
 
@@ -52,11 +52,11 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-	public EnumUf getUf() {
+	public EnumEstado getUf() {
 		return uf;
 	}
 
-	public void setUf(EnumUf uf) {
+	public void setUf(EnumEstado uf) {
 		this.uf = uf;
 	}
 	

@@ -18,7 +18,7 @@ import com.carros.Dao.EnderecoDao;
 import com.carros.Dao.TelefoneDao;
 import com.carros.Dao.UsuarioDao;
 import com.carros.Models.Endereco;
-import com.carros.Models.EnumUf;
+import com.carros.Models.EnumEstado;
 import com.carros.Models.Pessoa;
 import com.carros.Models.Telefone;
 
@@ -32,7 +32,7 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
 	private  Integer codEndereco;
 	private Integer codTelefone;
 	private static String CADUSUARIO_SUCESS = "/usuariosucess.jsp";
-	
+	private EnumEstado enumEstado;
 	
 
 	
@@ -46,6 +46,7 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
         telefoneDao = new TelefoneDao();
         codEndereco =0;
         codTelefone=0;
+        enumEstado.getDescricao();
         
     }
     
@@ -89,7 +90,7 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
 		endereco.setNumero(request.getParameter("numero"));
 		endereco.setComplemento(request.getParameter("complemento"));
 		endereco.setCep(request.getParameter("cep").toString());
-		endereco.setUf(EnumUf.valueOf(request.getParameter("enumUf")));
+		endereco.setUf(EnumEstado.valueOf(request.getParameter("enumUf")));
 		
 		
 		// set Telefone;
@@ -113,7 +114,7 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-				sce.getServletContext().setAttribute("enumUfs", EnumUf.values());
+				sce.getServletContext().setAttribute("enumEstados", enumEstado.getDescricao());
 	}
 
 	@Override
