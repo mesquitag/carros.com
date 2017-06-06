@@ -34,11 +34,12 @@ public class CarroControl extends HttpServlet {
 		
 		
 		//dados do carro;
-		
+				Carro carro = new Carro();
 				carro.setMarca(request.getParameter("marca"));
 				carro.setModelo(request.getParameter("modelo"));
 				carro.setPlaca(request.getParameter("placa"));
 				carro.setAno(request.getParameter("ano"));
+				
 		
 		/*Identifica se o formulario é do tipo multipart/form-data*/
 		if (ServletFileUpload.isMultipartContent(request)) {

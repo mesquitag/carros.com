@@ -48,10 +48,16 @@
 				<div class="form-group col-md-6">
 					<label for="foto" class="control-label">Foto:</label>
 					<input id="foto" name="foto" class="form-control " type="file" placeholder="Upload da foto do Veiculo"
-				 	   required="required" value='<c:out value="${carro.ano}"></c:out>'  >
-				</div>
+				 	     onchange="uploadFile();" value='<c:out value="${carro.foto}"></c:out>' >
 				</div>
 				
+				<div class="form-group">
+					<img alt="Imagem" src="" id="target" width="200" height="200">
+				</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
 				
 			</form>
 	</div>
@@ -72,7 +78,10 @@
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.mask.min.js"></script>
 	
-	
+	<link rel="stylesheet" href="./css/jquery-ui.css">
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery-ui.js"></script>
+		
 	<script>
 	$(document).ready(function(){
 		$('.mixed').mask('AAA-9999');
@@ -80,6 +89,29 @@
 		
   } );
   </script>
+ <script type="text/javascript">
+	
+ function uploadFile(){
+	 
+	var target = document.querySelector("img");
+	var file = document.querySelector("input[type=file]").files[0];
+	
+	var reader = new FileReader();
+	reader.onloadend = function(){
+		target.src = reader.result;
+	};
+	
+	if(file){
+		reader.readAsDataURL(file);
+	}else{
+	target.src="";
+	}
+ }
+		
+	
+
+
+</script>
 
 
 </body>
