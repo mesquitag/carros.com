@@ -47,12 +47,14 @@
 				
 				<div class="form-group col-md-6">
 					<label for="foto" class="control-label">Foto:</label>
-					<input id="foto" name="foto" class="form-control " type="file" placeholder="Upload da foto do Veiculo"
+					<input id="img" name="foto" class="form-control " type="file" placeholder="Upload da foto do Veiculo"
 				 	     onchange="uploadFile();" value='<c:out value="${carro.foto}"></c:out>' >
 				</div>
 				
-				<div class="form-group">
-					<img alt="Imagem" src="" id="target" width="200" height="200">
+				<div class="form-group" id=”foto”>
+				
+					<img alt="Imagem" src="" id="target" width="200" height="200" style=”display:none”>
+				
 				</div>
 				
 				</div>
@@ -95,7 +97,7 @@
 	 
 	var target = document.querySelector("img");
 	var file = document.querySelector("input[type=file]").files[0];
-	
+ 	
 	var reader = new FileReader();
 	reader.onloadend = function(){
 		target.src = reader.result;
@@ -107,10 +109,6 @@
 	target.src="";
 	}
  }
-		
-	
-
-
 </script>
 
 

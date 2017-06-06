@@ -1,12 +1,16 @@
 package com.carros.Models;
 
+import java.util.List;
+
+import org.apache.commons.fileupload.FileItem;
+
 public class Carro {
 	
 	protected String marca;
 	protected String modelo;
 	protected String placa;
 	protected String ano;
-	protected Byte image;
+	protected List<FileItem> image;
 	
 	
 	public Carro(){}
@@ -51,14 +55,13 @@ public class Carro {
 		this.ano = ano;
 	}
 
-
-	public Byte getImage() {
+	public List<FileItem> getImage() {
 		return image;
 	}
 
 
-	public void setImage(Byte image) {
-		this.image = image;
+	public void setImage(List<FileItem> multiparts) {
+		this.image = multiparts;
 	}
 	
 	

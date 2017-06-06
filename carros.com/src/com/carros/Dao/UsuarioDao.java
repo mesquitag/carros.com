@@ -39,4 +39,24 @@ public class UsuarioDao {
 		
 	}
 
+	public Pessoa ConsultarPorId(int codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void remover(int codigo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void listarPorNomeOuCpf(String nome, String cpf) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void listar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

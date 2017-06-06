@@ -14,16 +14,19 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.carros.Dao.CarroDao;
 import com.carros.Models.Carro;
 
 @WebServlet("/CarroControl")
 public class CarroControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    private Carro carro;    
+   private CarroDao carroDao;
 	
 	public CarroControl() {
         super();
         carro = new Carro();
+        carroDao = new CarroDao();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,15 +49,12 @@ public class CarroControl extends HttpServlet {
 			try {
 				/*Faz o parse do request*/
 				List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-
-				/*Escreve a o arquivo na pasta img*/
-				for (FileItem item : multiparts) {
-					if (!item.isFormField()) {
-						item.write(new File(request.getServletContext().getRealPath("img")+ File.separator + "uploadfile"));
-					}
-				}
-
-				request.setAttribute("message", "Arquivo carregado com sucesso");
+				carro.setImage(multiparts);
+				
+				carroDao.salvar(carro);
+				
+				
+				
 			} catch (Exception ex) {
 				request.setAttribute("message", "Upload de arquivo falhou devido a "+ ex);
 			}
