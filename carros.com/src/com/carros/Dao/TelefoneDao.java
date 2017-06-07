@@ -14,7 +14,7 @@ public class TelefoneDao {
 		Integer codigo =0;
 			Connection con = Conexao.getConexao();
 			try {
-				PreparedStatement pstmt = con.prepareStatement("insert into telefone(telefone) value(?) RETURNING id");
+				PreparedStatement pstmt = con.prepareStatement("INSERT INTO telefone (telefone) values(?) RETURNING id");
 				pstmt.setString(1, telefone.getTelefone());
 				ResultSet rs = pstmt.executeQuery();
 				if (rs.next()) {

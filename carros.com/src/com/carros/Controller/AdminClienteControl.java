@@ -57,7 +57,7 @@ public class AdminClienteControl extends HttpServlet {
       }
       
       
-    //  RequestDispatcher view = request.getRequestDispatcher(FORMULARIO);
+      //  RequestDispatcher view = request.getRequestDispatcher(FORMULARIO);
       
       //request.setAttribute("clientes", .ConsultarTodos());
      // view.forward(request, response);

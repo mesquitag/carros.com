@@ -61,7 +61,7 @@
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Administrativo</li>
                 <li><a href="#">Funcionario</a></li>
-                <li><a href="#">Clientes</a></li>
+                <li><a href="listcliente.jsp">Clientes</a></li>
               </ul>
             </li>
           </ul>

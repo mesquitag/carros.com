@@ -13,15 +13,15 @@ public class UsuarioDao {
 	public void salvar(Pessoa cliente, Integer codEndereco, Integer codTelefone) {
 			Connection con = Conexao.getConexao();
 			try {
-				PreparedStatement pstmt = con.prepareStatement("insert into pessoa(nome,datanascimento,email,senha,cpf,rg,endereco_id,telefone_id) values(?,?,?,?,?,?,?,?) ");
+				PreparedStatement pstmt = con.prepareStatement("INSERT INTO pessoa (nome,datanascimento,email,senha,cpf,rg,endereco_id,telefone_id) VALUES (?,?,?,?,?,?,?,?); ");
 				pstmt.setString(1, cliente.getNome());
 				pstmt.setDate(2, new java.sql.Date(cliente.getDataNascimento().getTime()));
 				pstmt.setString(3, cliente.getEmail());
 				pstmt.setString(4, cliente.getSenha());
-				pstmt.setString(4, cliente.getCpf());
-				pstmt.setString(5, cliente.getRg());
-				pstmt.setInt(6, codEndereco);
-				pstmt.setInt(7, codTelefone);
+				pstmt.setString(5, cliente.getCpf());
+				pstmt.setString(6, cliente.getRg());
+				pstmt.setInt(7, codEndereco);
+				pstmt.setInt(8, codTelefone);
 				
 				pstmt.execute();
 				pstmt.close();

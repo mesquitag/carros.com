@@ -5,9 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +21,7 @@ import com.carros.Models.Telefone;
 
 
 @WebServlet("/UsuarioControl")
-public class UsuarioControl extends HttpServlet implements ServletContextListener {
+public class UsuarioControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    private UsuarioDao usuarioDao;   
 	private EnderecoDao enderecoDao;
@@ -32,7 +29,6 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
 	private  Integer codEndereco;
 	private Integer codTelefone;
 	private static String CADUSUARIO_SUCESS = "/usuariosucess.jsp";
-	private EnumEstado enumEstado;
 	
 
 	
@@ -46,13 +42,7 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
         telefoneDao = new TelefoneDao();
         codEndereco =0;
         codTelefone=0;
-        enumEstado.getDescricao();
         
-    }
-    
-    public void init(ServletConfig config) throws ServletException {
-   	
-    
     }
     
 	/**
@@ -90,7 +80,7 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
 		endereco.setNumero(request.getParameter("numero"));
 		endereco.setComplemento(request.getParameter("complemento"));
 		endereco.setCep(request.getParameter("cep").toString());
-		endereco.setUf(EnumEstado.valueOf(request.getParameter("enumUf")));
+		endereco.setUf(EnumEstado.valueOf(request.getParameter("enumEstados")));
 		
 		
 		// set Telefone;
@@ -112,15 +102,6 @@ public class UsuarioControl extends HttpServlet implements ServletContextListene
 		
 	}
 
-	@Override
-	public void contextInitialized(ServletContextEvent sce) {
-				sce.getServletContext().setAttribute("enumEstados", enumEstado.getDescricao());
-	}
 
-	@Override
-	public void contextDestroyed(ServletContextEvent sce) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
