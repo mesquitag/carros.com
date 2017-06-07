@@ -24,10 +24,7 @@
             				</span>
        			   </div>
        			   </div>
-
-						
 					</div>
-						
 				</form>
 			</div>
 			
@@ -49,8 +46,8 @@
 							<td><c:out value="${pessoa.nome}" /></td>
 							<td><c:out value="${pessoa.email}" /></td>
 							<td><c:out value="${pessoa.cpf}" /></td>
-							<td><a href="AdminClienteControl?action=edit&userId=<c:out value="${pessoa.id}"/>" class="btn btn-warning" >Update</a></td>
-                    		<td><a href="AdminClienteControl?action=delete&userId=<c:out value="${pessoa.id}"/>" class="btn btn-danger">Delete</a></td>
+							<td><a href="AdminClienteControl?action=edit&id=<c:out value="${pessoa.id}"/>" class="btn btn-warning" >Update</a></td>
+                    		<td><a href="AdminClienteControl?action=remover&id=<c:out value="${pessoa.id}"/>" class="btn btn-danger">Delete</a></td>
                 </tr>
 					</c:forEach>
 				

@@ -49,7 +49,67 @@ public class UsuarioDao {
 	}
 
 	public void remover(int codigo) {
-		// TODO Auto-generated method stub
+			Connection con = Conexao.getConexao();
+			int codigoTel = recuperaCodTelefone(codigo);
+			int codigoEnd = recuperaCodEndereco(codigo);
+			TelefoneDao telefoneDao = new TelefoneDao();
+			 EnderecoDao enderecoDao = new EnderecoDao();
+			 
+			 telefoneDao.remover(codigoTel);
+			 enderecoDao.remover(codigoEnd);
+			
+			try {
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM pessoa WHERE id = ?" );
+				pstmt.setInt(1, codigo);
+				pstmt.executeUpdate();
+				pstmt.close();
+				con.close();
+				
+			} catch (SQLException e) {
+				System.out.println("não foi possivel excluir Pessoa");
+				e.printStackTrace();
+			}
+		
+	}
+
+	private Integer recuperaCodEndereco(int codigo) {
+		 int codigoEnd = 0;
+			
+			Connection con = Conexao.getConexao();
+			try {
+				PreparedStatement pstmt = con.prepareStatement("SELECT endereco_id FROM pessoa where id = ?; RETURNING telefone_id ");
+				  pstmt.setInt(1, codigo);
+				  ResultSet rs = pstmt.executeQuery();
+				  while(rs.next()){
+					  return codigoEnd = rs.getInt("telefone_id");
+				  }
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
+			return codigoEnd;
+	}
+
+	public Integer recuperaCodTelefone(int codigo){
+		 int codigoTel = 0;
+		
+		Connection con = Conexao.getConexao();
+		try {
+			PreparedStatement pstmt = con.prepareStatement("SELECT telefone_id FROM pessoa where id = ?; RETURNING telefone_id ");
+			  pstmt.setInt(1, codigo);
+			  ResultSet rs = pstmt.executeQuery();
+			  while(rs.next()){
+				  return codigoTel = rs.getInt("telefone_id");
+			  }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return codigoTel;
+		
 		
 	}
 
