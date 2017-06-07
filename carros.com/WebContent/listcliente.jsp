@@ -14,26 +14,25 @@
 			<div class="form-group">
 				<form action="AdminClienteControl" id="form-cliente" method="post">
 					<div class="row">
-						<div class="form-group col-md-5">
-							<label for="nome" class="control-label">Nome:</label>
-							<input id="nome" name="nome" class="form-control" type="text" placeholder="Nome do clinete"
-				 	   	 		value='<c:out value="${cliente.nome}"></c:out>'  >
-						</div>
+					
+					<div class="col-md-12">
+        			<div class="input-group h2">
+            			<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar por nome do Cliente">
+            				<span class="input-group-btn">
+								<a href="AdminClienteControl?action=pesquisa&clienteId=<c:out value="${cliente.id}"/>" class="glyphicon glyphicon-search btn btn-primary bottom" ></a>
+                   				 <span class="glyphicon glyphicon-search"></span>
+            				</span>
+       			   </div>
+       			   </div>
+
 						
-						<div class="form-group col-md-5">
-							<label for="cpf" class="control-label">CPF:</label>
-							<input id="cpf" name="cof" class="form-control" type="text" placeholder="CPF do cliente"
-				 	   	 		value='<c:out value="${cliente.cpf}"></c:out>'  >
-						</div>
-						
-						<button type="submit" class="btn btn-primary bottom" style="margin-top: 1.8em"> Pesquisa</button>
 					</div>
 						
 				</form>
 			</div>
 			
-			<div class="form-group">
-			<table class="table table-hover">
+			<div class="form-group tabela">
+			<table class="table table-hover tablela">
 				<thead>
 					<tr>
 						<th>Id</th>
@@ -44,14 +43,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${pessoas}" var="pessoa">
+					<c:forEach items="${clientes}" var="pessoa">
 						<tr>
 							<td><c:out value="${pessoa.id}" /></td>
 							<td><c:out value="${pessoa.nome}" /></td>
 							<td><c:out value="${pessoa.email}" /></td>
 							<td><c:out value="${pessoa.cpf}" /></td>
-							<td><a href="ClienteControl?action=edit&userId=<c:out value="${pessoa.id}"/>">Update</a></td>
-                    		<td><a href="ClienteControl?action=delete&userId=<c:out value="${pessoa.id}"/>">Delete</a></td>
+							<td><a href="AdminClienteControl?action=edit&userId=<c:out value="${pessoa.id}"/>" class="btn btn-warning" >Update</a></td>
+                    		<td><a href="AdminClienteControl?action=delete&userId=<c:out value="${pessoa.id}"/>" class="btn btn-danger">Delete</a></td>
                 </tr>
 					</c:forEach>
 				
@@ -82,5 +81,6 @@
 	<link rel="stylesheet" href="./css/jquery-ui.css">
 	<script src="./js/jquery.js"></script>
 	<script src="./js/jquery-ui.js"></script>
+	<script src="./js/tabela.js"></script>
 </body>
 </html>

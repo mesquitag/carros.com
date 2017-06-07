@@ -2,7 +2,11 @@ package com.carros.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.carros.Models.Cliente;
 import com.carros.Models.Pessoa;
@@ -54,8 +58,35 @@ public class UsuarioDao {
 		
 	}
 
-	public void listar() {
-		// TODO Auto-generated method stub
+	public List<Pessoa> listarTodos() {
+		Connection con = Conexao.getConexao();
+		List<Pessoa> clientes = new ArrayList<Pessoa>();
+		
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM pessoa");
+			int codEndereco=0;
+			int codTelefone =0;
+			while(rs.next()){
+				Pessoa cliente = new Pessoa();
+				cliente.setId(rs.getInt("id"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setEmail(rs.getString("email"));
+				cliente.setSenha(rs.getString("senha"));
+				cliente.setDataNascimento(rs.getDate("datanascimento"));
+				cliente.setCpf(rs.getString("cpf"));
+				cliente.setRg(rs.getString("rg"));
+				//codEndereco= rs.getInt("endereco_id");
+				//codTelefone = rs.getInt("telefone_id");
+				
+				clientes.add(cliente);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return clientes;
 		
 	}
 

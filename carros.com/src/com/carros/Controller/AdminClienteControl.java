@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.carros.Dao.ClienteDao;
 import com.carros.Dao.UsuarioDao;
 import com.carros.Models.Pessoa;
+import com.hxtt.global.v;
 
 /**
  * Servlet implementation class AdminClienteControl
@@ -21,6 +22,7 @@ public class AdminClienteControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Pessoa cliente; 
 	private UsuarioDao clienteDao;
+	private static String LISTACLIENTE = "./listcliente.jsp";
 	
     public AdminClienteControl() {
         super();
@@ -48,11 +50,14 @@ public class AdminClienteControl extends HttpServlet {
       String cpf = request.getParameter("cpf");
       
       if(action.equalsIgnoreCase("pesquisa")){
-      	if(!nome.isEmpty() || nome.equals(null) && cpf.isEmpty() || cpf.equals(null)){
-      		clienteDao.listarPorNomeOuCpf(nome,cpf);
-      	}else{
-      		clienteDao.listar();
-      	}
+//      	if(!nome.isEmpty() || nome.equals(null) && cpf.isEmpty() || cpf.equals(null)){
+//      		clienteDao.listarPorNomeOuCpf(nome,cpf);
+//      	}else{
+      		request.setAttribute("clientes", clienteDao.listarTodos());
+      		
+//      	}
+      	RequestDispatcher view = request.getRequestDispatcher(LISTACLIENTE);
+      	view.forward(request, response);
       	
       }
       
