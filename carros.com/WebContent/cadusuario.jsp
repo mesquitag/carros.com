@@ -7,7 +7,7 @@
 		<div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="jumbotron" style="margin-top:3%">
 		<br>        
         <h2>Novo Usuario</h2>
 
