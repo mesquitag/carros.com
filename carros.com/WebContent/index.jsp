@@ -122,7 +122,24 @@
                             <img class="iconeHoraRetorno" style="cursor:pointer;" src="img/iconeRelogio.png">
                         </span>
                     </div>
-                
+                 <div class="form-group">
+                        <label id="labelDataRetirada" for="localRetirada">Local de Retirada</label>
+                        <span class="iconeLocalRetirada clique"></span>
+                        <input type="text" class="campoLocal" name="localRetirada" value="" style="width: 233px;"/>
+                        <input id="vLocalRetirada" type="hidden" name="vLocalRetirada" value=""/>
+                        <span>
+                            <img class="iconeLocalRetirada" src="img/iconePin.png"/>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label id="labelDataRetirada" for="localRetorno">Local do Retorno</label>
+                        <span class="iconeLocalRetorno clique"></span>
+                        <input  type="text" class="campoLocal" name="localRetorno" value="" style="width: 233px;"/>
+                        <input type="hidden" name="vLocalRetorno" value=""/>
+                        <span>
+                            <img class="iconeLocalRetorno" src="img/iconePin.png"/>
+                        </span>
+                    </div>
         </div>
 
         <button id="btn-proximo-passo" type="button" style="width: 50%; margin-top: 25px;" class="btn btn-danger ">
