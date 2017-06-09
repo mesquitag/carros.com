@@ -38,6 +38,7 @@ public class AdminClienteControl extends HttpServlet {
       if (action.equalsIgnoreCase("remover")){
           int id = Integer.parseInt(request.getParameter("id"));
           clienteDao.remover(id);
+       
       } 
       
       if (action.equalsIgnoreCase("alterar")){
@@ -46,8 +47,7 @@ public class AdminClienteControl extends HttpServlet {
           request.setAttribute("cliente", cliente); 
       }
       
-      String nome = request.getParameter("nome");
-      String cpf = request.getParameter("cpf");
+      
       
       if(action.equalsIgnoreCase("pesquisa")){
 //      	if(!nome.isEmpty() || nome.equals(null) && cpf.isEmpty() || cpf.equals(null)){
@@ -56,10 +56,10 @@ public class AdminClienteControl extends HttpServlet {
       		request.setAttribute("clientes", clienteDao.listarTodos());
       		
 //      	}
-      	RequestDispatcher view = request.getRequestDispatcher(LISTACLIENTE);
-      	view.forward(request, response);
       	
       }
+      RequestDispatcher view = request.getRequestDispatcher(LISTACLIENTE);
+      view.forward(request, response);
       
       
       //  RequestDispatcher view = request.getRequestDispatcher(FORMULARIO);

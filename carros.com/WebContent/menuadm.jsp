@@ -12,9 +12,7 @@
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/navbar-fixed-top.css" rel="stylesheet">
 <link href="./css/login.css" rel="stylesheet">
-<link
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-	rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <!--JqueryUi -->
 <link rel="stylesheet" href="./css/jquery-ui.css">
