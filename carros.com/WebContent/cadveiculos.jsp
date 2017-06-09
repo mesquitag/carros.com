@@ -37,13 +37,13 @@
 				<div class="row">
 				<div class="form-group col-md-3">
 					<label for="placa" class="control-label">Placa:</label>
-					<input id="placa" name="placa" class="form-control mixed" type="text" placeholder="Digite, a placa do Veiculo"
+					<input id="placa" name="placa" class="form-control placa" type="text" placeholder="Digite, a placa do Veiculo"
 				 	   required="required" value='<c:out value="${carro.placa}"></c:out>'  >
 				</div>
 				
 				<div class="form-group col-md-3">
 					<label for="ano" class="control-label">Ano:</label>
-					<input id="ano" name="ano" class="form-control mixed2" type="text" placeholder="Digite, O ano do Veiculo"
+					<input id="ano" name="ano" class="form-control ano" type="text" placeholder="Digite, O ano do Veiculo"
 				 	   required="required" value='<c:out value="${carro.ano}"></c:out>'  >
 				</div>
 				
@@ -73,32 +73,23 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')</script>
+   	<script src="./js/jquery-ui.js"></script>
+   	<link rel="stylesheet" href="./css/jquery-ui.css">
+   	
+   	<script type="text/javascript" src="./js/jquery.mask.min.js"></script>
+   	
     <script src="./js/bootstrap.min.js"></script>
+   	<link href="./css/bootstrap.css" rel="stylesheet"/>
+    	
 	<script src="./js/validator.min.js"></script>
-	
-	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.mask.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.mask.js"></script>
-	
-	<link rel="stylesheet" href="./css/jquery-ui.css">
-	<script src="./js/jquery.js"></script>
-	<script src="./js/jquery-ui.js"></script>
-	<script src="./js/jquery-ui.js"></script>
-	
-	<link href="./css/bootstrap.css" rel="stylesheet"/>
-
-	<script src="./js/jquery.js"></script>
-	<script src="./js/bootstrap.js"></script>
-
 
 	<script src="./js/autocomplete.js"></script>
 	<script src="./js/uploadFile.js"></script>
 		
 <script>
 	$(document).ready(function(){
-		$('.mixed').mask('AAA-9999');
-		$('.mixed2').mask('9999');
+		$('.placa').mask('AAA-9999');
+		$('.ano').mask('9999');
 		
   } );
   </script>

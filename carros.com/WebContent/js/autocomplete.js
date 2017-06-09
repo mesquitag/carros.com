@@ -7,7 +7,7 @@ $(function() {
 		  "Mitsubishi","Nissan","Peugeot","Porsche","Ram","Smart", "Subaru", "Toyota", ""
 	  ];
 	  
-	  $(".autocomplete").autocomplete({
+	  $("#marca").autocomplete({
 	    source: availableTags
 	  });
 	});
