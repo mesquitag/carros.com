@@ -154,4 +154,32 @@ public class UsuarioDao {
 		
 	}
 
+	public List<Pessoa> listarPorNome(String nomePesquisa) {
+		Connection con = Conexao.getConexao();
+		List<Pessoa> clientes = new ArrayList<Pessoa>();
+		try {
+			PreparedStatement pstmt = con
+			      .prepareStatement("SELECT * FROM pessoa WHERE nome like %(?)%");
+			pstmt.setString(1, nomePesquisa);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Pessoa cliente = new Pessoa();
+				cliente.setId(rs.getInt("id"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setEmail(rs.getString("email"));
+				cliente.setSenha(rs.getString("senha"));
+				cliente.setDataNascimento(rs.getDate("datanascimento"));
+				cliente.setCpf(rs.getString("cpf"));
+				cliente.setRg(rs.getString("rg"));
+
+				clientes.add(cliente);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return clientes;
+
+	}
+
 }

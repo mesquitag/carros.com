@@ -16,7 +16,7 @@
 				<div class="row">
 				<div class="form-group col-md-4">
 					<label for="marca" class="control-label">Marca:</label> 
-					<input id="marca" name="marca" class="form-control autocomplete" placeholder="Digite a marca do Veiculo" type="text"
+					<input id="marca" name="marca" class="form-control autocomplete" placeholder="Campo Auto Complete" type="text"
 					  value='<c:out value="${carro.marca}"></c:out>' data-error="Por favor, informe a marca do veiculo." required>
 					  <div class="help-block with-errors"></div>
 				</div>

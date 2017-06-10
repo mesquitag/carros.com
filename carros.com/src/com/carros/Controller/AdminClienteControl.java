@@ -50,12 +50,17 @@ public class AdminClienteControl extends HttpServlet {
       
       
       if(action.equalsIgnoreCase("pesquisa")){
-//      	if(!nome.isEmpty() || nome.equals(null) && cpf.isEmpty() || cpf.equals(null)){
-//      		clienteDao.listarPorNomeOuCpf(nome,cpf);
-//      	}else{
+      	
+      	
+      	
+      	if(!request.getParameter("pesquisa").equals(null)){
+      		
+      		clienteDao.listarPorNome(request.getParameter("pesquisa"));
+      		
+      	}else{
       		request.setAttribute("clientes", clienteDao.listarTodos());
       		
-//      	}
+      	}
       	
       }
       RequestDispatcher view = request.getRequestDispatcher(LISTACLIENTE);
