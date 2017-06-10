@@ -49,7 +49,71 @@ public class UsuarioDao {
 	}
 
 	public void remover(int codigo) {
-		// TODO Auto-generated method stub
+			Connection con = Conexao.getConexao();
+			int codigoTel = recuperaCodTelefone(codigo);
+			int codigoEnd = recuperaCodEndereco(codigo);
+			TelefoneDao telefoneDao = new TelefoneDao();
+			EnderecoDao enderecoDao = new EnderecoDao();
+			
+			try {
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM pessoa WHERE id = ?" );
+				pstmt.setInt(1, codigo);
+				pstmt.executeUpdate();
+				pstmt.close();
+				con.close();
+				
+			} catch (SQLException e) {
+				System.out.println("não foi possivel excluir Pessoa");
+				e.printStackTrace();
+			}
+			
+			telefoneDao.remover(codigoTel);
+			enderecoDao.remover(codigoEnd);
+		
+	}
+
+	private Integer recuperaCodEndereco(int codigo) {
+		 int codigoEnd = 0;
+			
+			Connection con = Conexao.getConexao();
+			try {
+				PreparedStatement pstmt = con.prepareStatement("SELECT endereco_id FROM pessoa where id = ? ");
+				  pstmt.setInt(1, codigo);
+				  ResultSet rs = pstmt.executeQuery();
+				  while(rs.next()){
+					  return codigoEnd = rs.getInt("endereco_id");
+				  }
+				  pstmt.close();
+				  con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+					
+			return codigoEnd;
+	}
+
+	public Integer recuperaCodTelefone(int codigo){
+		 int codigoTel = 0;
+		
+		Connection con = Conexao.getConexao();
+		try {
+			PreparedStatement pstmt = con.prepareStatement("SELECT telefone_id FROM pessoa where id = ? ");
+			  pstmt.setInt(1, codigo);
+			  ResultSet rs = pstmt.executeQuery();
+			  while(rs.next()){
+				  return codigoTel = rs.getInt("telefone_id");
+			  }
+			  pstmt.close();
+			  con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return codigoTel;
+		
 		
 	}
 
@@ -88,6 +152,34 @@ public class UsuarioDao {
 		
 		return clientes;
 		
+	}
+
+	public List<Pessoa> listarPorNome(String nomePesquisa) {
+		Connection con = Conexao.getConexao();
+		List<Pessoa> clientes = new ArrayList<Pessoa>();
+		try {
+			PreparedStatement pstmt = con
+			      .prepareStatement("SELECT * FROM pessoa WHERE nome like %(?)%");
+			pstmt.setString(1, nomePesquisa);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Pessoa cliente = new Pessoa();
+				cliente.setId(rs.getInt("id"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setEmail(rs.getString("email"));
+				cliente.setSenha(rs.getString("senha"));
+				cliente.setDataNascimento(rs.getDate("datanascimento"));
+				cliente.setCpf(rs.getString("cpf"));
+				cliente.setRg(rs.getString("rg"));
+
+				clientes.add(cliente);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return clientes;
+
 	}
 
 }

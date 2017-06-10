@@ -17,17 +17,14 @@
 					
 					<div class="col-md-12">
         			<div class="input-group h2">
-            			<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar por nome do Cliente">
+            			<input name="pesquisa" class="form-control" id="search" type="text" placeholder="Pesquise pelo nome do Cliente ou clique em pesquisar para listar todos">
             				<span class="input-group-btn">
 								<a href="AdminClienteControl?action=pesquisa&clienteId=<c:out value="${cliente.id}"/>" class="glyphicon glyphicon-search btn btn-primary bottom" ></a>
                    				 <span class="glyphicon glyphicon-search"></span>
             				</span>
        			   </div>
        			   </div>
-
-						
 					</div>
-						
 				</form>
 			</div>
 			
@@ -49,8 +46,8 @@
 							<td><c:out value="${pessoa.nome}" /></td>
 							<td><c:out value="${pessoa.email}" /></td>
 							<td><c:out value="${pessoa.cpf}" /></td>
-							<td><a href="AdminClienteControl?action=edit&userId=<c:out value="${pessoa.id}"/>" class="btn btn-warning" >Update</a></td>
-                    		<td><a href="AdminClienteControl?action=delete&userId=<c:out value="${pessoa.id}"/>" class="btn btn-danger">Delete</a></td>
+							<td><a href="AdminClienteControl?action=edit&id=<c:out value="${pessoa.id}"/>" class="btn btn-warning" >Update</a></td>
+                    		<td><a href="AdminClienteControl?action=remover&id=<c:out value="${pessoa.id}"/>" class="btn btn-danger">Delete</a></td>
                 </tr>
 					</c:forEach>
 				

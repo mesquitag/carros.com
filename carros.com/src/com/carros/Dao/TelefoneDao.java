@@ -29,4 +29,20 @@ public class TelefoneDao {
 		return codigo;
 	}
 
+	public void remover(int codigo) {
+		Connection con = Conexao.getConexao();
+		 
+		try {
+			PreparedStatement pstm = con.prepareStatement("DELETE FROM telefone WHERE id=?");
+			pstm.setInt(1, codigo);
+			pstm.executeUpdate();
+			pstm.close();
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("não foi possivel deletar o telefone");
+			e.printStackTrace();
+		}
+		
+	}
+
 }

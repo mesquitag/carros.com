@@ -30,4 +30,19 @@ public class EnderecoDao {
 	return codigo;
 	}
 
+	public void remover(int codigo) {
+		Connection con = Conexao.getConexao();
+				try {
+					PreparedStatement pstmt = con.prepareStatement("DELETE FROM endereco WHERE id=?");
+					pstmt.setInt(1, codigo);
+					pstmt.executeUpdate();
+					pstmt.close();
+					con.close();
+				} catch (SQLException e) {
+					System.out.println("não foi possivel deletar endereço");	
+					e.printStackTrace();
+				}
+		
+	}
+
 }
