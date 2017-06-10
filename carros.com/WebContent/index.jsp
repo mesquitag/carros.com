@@ -90,7 +90,7 @@
                 
                     <div class="form-group">
                         <label id="labelDataRetirada" for="dataInicio">Data de Retirada</label>
-                        <input type="text" id="horaInicio" name="dataInicio" class="campoDataRetirada" style="width: 100px;"  value="" />
+                        <input type="text" id="txtCheckin" class="campoDataRetirada" name="dataInicio"  style="width: 90px;"  value="" />
                         <span>
                             <img class="iconeCalRetirada" style="cursor:pointer;" src="img/iconeCalendario.png">
                         </span>
@@ -99,7 +99,7 @@
                 
                     <div class="form-group">
                         <label id="labelDataRetirada" for="dataRetorno">Data de Retorno</label>
-                        <input type="text" class="campoDataRetorno" name="dataRetorno" value="" style="width: 100px;">
+                        <input type="text" id="txtCheckout" class="campoDataRetorno" name="dataRetorno" value="" style="width: 90px;">
                         <span>
                             <img class="iconeCalRetorno" style="cursor:pointer;" src="img/iconeCalendario.png">
                         </span>
@@ -107,8 +107,8 @@
                
                 
                     <div class="form-group">
-                        <label id="labelDataRetirada" for="horaRetirada">Date de Retirada</label>
-                        <input type="text" class="campoHora" name="horaRetirada" value="" style="width: 100px;">
+                        <label id="labelDataRetirada" for="horaRetirada">Hora de Retirada</label>
+                        <input type="text" id="horaInicio" class="campoHora" name="horaRetirada" value="" style="width: 90px;">
                         <span>
                             <img class="iconeHoraRetirada" style="cursor:pointer;" src="img/iconeRelogio.png">
                         </span>
@@ -116,8 +116,8 @@
                 
                
                     <div class="form-group">
-                        <label id="labelDataRetirada" for="horaRetorno">Data de Retorno</label>
-                        <input  type="text" class="campoHora" name="horaRetorno" value="" style="width: 100px;">
+                        <label id="labelDataRetirada" for="horaRetorno">Hora de Retorno</label>
+                        <input  type="text" class="campoHora" name="horaRetorno" value="" style="width: 90px;">
                         <span>
                             <img class="iconeHoraRetorno" style="cursor:pointer;" src="img/iconeRelogio.png">
                         </span>
@@ -142,7 +142,7 @@
                     </div>
         </div>
 
-        <button id="btn-proximo-passo" type="button" style="width: 50%; margin-top: 25px;" class="btn btn-danger ">
+        <button id="btn-proximo-passo" type="button" style="width: 100%; margin-top: 25px;" class="btn btn-danger ">
             PRÓXIMO PASSO<br>
             <span style="font-size: 9px; font-family: 'AvenirLTStd65Medium';">ESCOLHA DO VEÍCULO</span>
         </button>
@@ -157,53 +157,13 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')</script>
+    <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-	<!-- DataPikes script -->
-	
-	<script>
-  	$( function() {
-    var dateFormat = "dd/MM/yyyy",
-      from = $( "#dataInicio" )
-        .datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 3
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#dataFim" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
- 
-    function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
- 
-      return date;
-    }
-  } );
-  </script>
-  <!-- Timepicker -->
-	
-	 <script>
-                $(function() {
-                    $('#horaInicio').timepicker();
-                });
-            </script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  
+
 </body>
 
 </html>

@@ -18,3 +18,99 @@
 #mediaDataRetirada{
     width: 31%;
 }
+.campoData {
+    background: none;
+    background-color: #f1f2f2;
+    border: none;
+    border-top: 4px solid #e5e6e6;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'AvenirLTStd65Medium';
+    font-size: 11px;
+    color: #808285;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    height: 27px;
+    vertical-align: bottom;
+    width: 110px
+}
+
+.campoDataRetirada {
+    background: none;
+    background-color: #f1f2f2;
+    border: none;
+    border-top: 4px solid #e5e6e6;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'AvenirLTStd65Medium';
+    font-size: 11px;
+    color: #808285;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    height: 27px;
+    vertical-align: bottom;
+    width: 110px
+}
+
+.campoDataRetorno {
+    background: none;
+    background-color: #f1f2f2;
+    border: none;
+    border-top: 4px solid #e5e6e6;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'AvenirLTStd65Medium';
+    font-size: 11px;
+    color: #808285;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    height: 27px;
+    vertical-align: bottom;
+    width: 110px
+}
+.campoHora {
+    background: none;
+    background-color: #f1f2f2;
+    border: none;
+    border-top: 4px solid #e5e6e6;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'AvenirLTStd65Medium';
+    font-size: 11px;
+    color: #808285;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    vertical-align: bottom;
+    width: 110px;
+    margin-right: 5px;
+    height: 30px;
+}
+.campoLocal {
+    background: none;
+    background-color: #f1f2f2;
+    border: none;
+    border-top: 4px solid #e5e6e6;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'AvenirLTStd65Medium';
+    font-size: 11px;
+    color: #808285;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    vertical-align: bottom;
+    width: 90%;
+    margin-right: 5px;
+}

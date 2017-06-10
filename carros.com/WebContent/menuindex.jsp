@@ -10,13 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="./img/favicon.png">
 
-<!-- Bootstrap core CSS -->
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-<link href="./css/navbar-fixed-top.css" rel="stylesheet">
-<link href="./css/login.css" rel="stylesheet">
-<link href="./css/main.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
 <!--JqueryUi -->
 <link rel="stylesheet" href="./css/jquery-ui.css">
 <script src="./js/jquery.js"></script>
@@ -24,12 +17,21 @@
 
 <!-- TimePiker Jquery -->
 <script type="text/javascript" src="./js/jquery.min.js"></script>
-<script type="text/javascript" src="./js/jquery.timepicker.js"></script>
 <link rel="stylesheet" type="text/css"	href="./css/jquery.timepicker.css" />
-<script type="text/javascript" src="./js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="./js/datepicker.js"></script>
 <link rel="stylesheet" type="text/css"	href="./css/bootstrap-datepicker.css" />
 <script type="text/javascript" src="./js/site.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/site.css" />
+
+<!-- Bootstrap core CSS -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/navbar-fixed-top.css" rel="stylesheet">
+<link href="./css/login.css" rel="stylesheet">
+<link href="./css/main.css" rel="stylesheet">
+<link href="./css/datepicker.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 
 
 <title>Carros.com</title>
@@ -45,10 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.jsp" 
-          style="margin-right: -15%;"
-          
-          ></a>
+          <a class="navbar-brand" href="#" style="margin-right: -15%;"></a>
           
            <img class="img-responsive" style="margin-top: 1.9%;"
                                  src="img/logo.png"/>
