@@ -1,9 +1,9 @@
-<jsp:include page="menuadm.jsp" />
+<jsp:include page="menuusuario.jsp" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-	
+	 <script src="./js/jquery.min.js"></script>
 
 <div class="container">
 
@@ -55,7 +55,7 @@
 				
 				<div class="form-group" id=”foto”>
 				
-					<img alt="Imagem" src="" id="target" width="200" height="200" style=”display:none”>
+					<img alt="Imagem" src="" id="target" width="200" height="200">
 				
 				</div>
 				
@@ -84,7 +84,7 @@
 	<script src="./js/validator.min.js"></script>
 
 	<script src="./js/autocomplete.js"></script>
-	<script src="./js/uploadFile.js"></script>
+	<!-- <script src="./js/uploadFile.js"></script> -->
 		
 <script>
 	$(document).ready(function(){
@@ -94,6 +94,41 @@
   } );
   </script>
  
+ <script type="text/javascript">
+ function uploadFile(){
+	 
+		var target = document.querySelector("img");
+		var file = document.querySelector("input[type=file]").files[0];
+	 	
+		var reader = new FileReader();
+		
+		reader.onloadend = function(){
+			target.src = reader.result;
+			/////-----------Upload Ajax--------------------
+			$.ajax({
+				method: "POST",
+				url: "CadVeiculoControl",
+				data: {fileUpload : reader.result}
+			})
+			.done(function(response){
+				alert("Sucesso: Upload realizado parciamente clique em salvar para terminar Cadastro " + response);
+			})
+			.fail(function(xhr,status,errorThrown){
+				alert("Error: "+ xhr.responseText);
+			});
+		
+		/////-------------------------------
+		
+		};
+		
+		if(file){
+			reader.readAsDataURL(file);
+			
+		}else{
+		target.src="";
+		}
+	 }
+</script>
 
 
 

@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.carros.Dao.ClienteDao;
 import com.carros.Dao.UsuarioDao;
 import com.carros.Models.Pessoa;
-import com.hxtt.global.v;
 
 /**
  * Servlet implementation class AdminClienteControl
@@ -51,26 +49,17 @@ public class AdminClienteControl extends HttpServlet {
       
       if(action.equalsIgnoreCase("pesquisa")){
       	
-      	
-      	
-      	if(!request.getParameter("pesquisa").equals(null)){
-      		
-      		clienteDao.listarPorNome(request.getParameter("pesquisa"));
+      	if(request.getParameter("nomePesquisa").equals(null) || request.getParameter("nomePesquisa").equalsIgnoreCase("")){
+      		request.setAttribute("clientes", clienteDao.listarTodos());
       		
       	}else{
-      		request.setAttribute("clientes", clienteDao.listarTodos());
+      		clienteDao.listarPorNome(request.getParameter("nomePesquisa"));
       		
       	}
       	
       }
       RequestDispatcher view = request.getRequestDispatcher(LISTACLIENTE);
       view.forward(request, response);
-      
-      
-      //  RequestDispatcher view = request.getRequestDispatcher(FORMULARIO);
-      
-      //request.setAttribute("clientes", .ConsultarTodos());
-     // view.forward(request, response);
   }
 		
 		

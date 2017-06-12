@@ -1,4 +1,4 @@
-<jsp:include page="menuadm.jsp" />
+<jsp:include page="menuusuario.jsp" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -17,9 +17,9 @@
 					
 					<div class="col-md-12">
         			<div class="input-group h2">
-            			<input name="pesquisa" class="form-control" id="search" type="text" placeholder="Pesquise pelo nome do Cliente ou clique em pesquisar para listar todos">
+            			<input name="nomePesquisa" class="form-control" id="search" type="text" placeholder="Pesquise pelo nome do Cliente ou clique em pesquisar para listar todos">
             				<span class="input-group-btn">
-								<a href="AdminClienteControl?action=pesquisa&clienteId=<c:out value="${cliente.id}"/>" class="glyphicon glyphicon-search btn btn-primary bottom" ></a>
+								<a href="AdminClienteControl?action=pesquisa&nomePesquisa=<c:out value="${nomePesquisa}"/>" class="glyphicon glyphicon-search btn btn-primary bottom" ></a>
                    				 <span class="glyphicon glyphicon-search"></span>
             				</span>
        			   </div>

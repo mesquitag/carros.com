@@ -1,5 +1,6 @@
 package com.carros.Controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -16,13 +17,16 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import com.carros.Dao.CarroDao;
 import com.carros.Models.Carro;
 
-@WebServlet("/CarroControl")
-public class CarroControl extends HttpServlet {
+/**
+ * Servlet implementation class CadVeiculoControl
+ */
+@WebServlet("/CadVeiculoControl")
+public class CadVeiculoControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    private Carro carro;    
    private CarroDao carroDao;
 	
-	public CarroControl() {
+	public CadVeiculoControl() {
         super();
         carro = new Carro();
         carroDao = new CarroDao();
@@ -41,31 +45,17 @@ public class CarroControl extends HttpServlet {
 				carro.setModelo(request.getParameter("modelo"));
 				carro.setPlaca(request.getParameter("placa"));
 				carro.setAno(request.getParameter("ano"));
+		///----------------------------------------------------
+				
+				String fileUpload = request.getParameter("fileUpload");
+				System.out.println(fileUpload); // img base 64
+				
 				
 		
-		/*Identifica se o formulario é do tipo multipart/form-data*/
-		if (ServletFileUpload.isMultipartContent(request)) {
-			try {
-				/*Faz o parse do request*/
-				List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-				carro.setImage(multiparts);
-				
-				carroDao.salvar(carro);
-				
-				
-				
-			} catch (Exception ex) {
-				request.setAttribute("message", "Upload de arquivo falhou devido a "+ ex);
-			}
+			
 
-		} else {
-			request.setAttribute("message","Desculpe este Servlet lida apenas com pedido de upload de arquivos");
-		}
 
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		        
+	}
 	}
 
-		
-		
-	
-}
