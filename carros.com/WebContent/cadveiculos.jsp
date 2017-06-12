@@ -10,6 +10,7 @@
 	<!-- Main component for a primary marketing message or call to action -->
 	<div class="jumbotron">
 		<br>
+		<br>
 		<h2>Cadastro de Veiculos</h2>
 		<br>
 			<form id="formExemplo" data-toggle="validator" role="form" method="post" action="CadVeiculoControl" enctype="multipart/form-data">
