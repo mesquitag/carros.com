@@ -47,7 +47,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Carros.com</a>
+           <a class="navbar-brand" href="#" style="margin-right: -15%;"></a>
+          
+           <img class="img-responsive" style="margin-top: 1.9%;"
+                                 src="img/logo.png"/>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
