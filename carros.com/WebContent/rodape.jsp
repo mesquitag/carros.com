@@ -4,13 +4,17 @@
      style="min-height: 40px; background-color: #808285; bottom: 0; width: 100%; z-index: 999;">
     <div class="container">
         <div class="row">
-            <div class="col-md-9" style="margin-top: 13px;">
+            <div class="col-md-9" style="margin-top: -7px;">
                 <div class="textoCentralReserva">
                     <img style="margin-right: 7px; position: absolute;"
                          src="img/iconeTelefone.png"/><span
                         style="margin-left: 25px;">CENTRAL DE RESERVAS <span
                             style="font-weight: bold;"> +55 (62) 7070-7070</span></span>
                 </div>
+            </div>
+             <div class="col-md-3 hidden-xs">
+                <div class="btAtendimento"><a class="atendimento" href="https://tawk.to/chat/5940a31db3d02e11ecc69d0f/default/?$_tawk_popout=true"><img
+                            src="img/btAtendimento.png" style="margin-top: -19px"/></a></div>
             </div>
              </div>
     </div>
@@ -46,7 +50,7 @@
             </div>
 
             <div class="col-md-4 col-xs-12" style="background-color: #f1f2f2; min-height: 165px;">
-                <img class="formasPag" src="img/imgFormasPag.png"/>
+                <img class="formasPag" src="img/imgFormasPag.png" style="margin-top:11%"/>
                </div>
 
         </div>

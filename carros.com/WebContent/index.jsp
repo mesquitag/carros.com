@@ -65,12 +65,12 @@
 	<div id="tamanhoContainer" class="container">
 		<div class="row">
 			<div id="mediaDataRetirada" class="col-xs-12 col-sm-7 col-md-8">
-				<div class="jumbotron center-block">
-						<div class="tituloBusca">
-            <img class="text-center" src="img/tituloBusca.png">
+				<div  class="jumbotron center-block">
+						<div class="tituloBusca" >
+            <img src="img/tituloBusca.png" >
         </div>
 					
-					<form action="ReservaController" method="post" name="frmReserva" class="form-inline">
+					<form id="chekout" action="ReservaController" method="post" name="frmReserva" class="form-inline">
 					
 							<div id="boxBuscaDesk" class=" box-data-reserva">
 							 <!-- Deixa o fundo do campo de data em branco  -->
@@ -149,7 +149,7 @@
         <div  id="text-center" class="container">
             <div class="col-md-8">
                 <div class="textoInterna">
-                    <p>Antes de alugar seu veículo, consulte os diferenciais da <strong>BR22</strong> e as principais condições de contratação.</p>
+                    <p>Antes de alugar seu veículo, consulte os diferenciais da <strong>Carro.com</strong> e as principais condições de contratação.</p>
                     <div class="container">
                         <div class="row">
 			 <div class="col-md-7">
@@ -170,7 +170,7 @@
                                             <div class="tituloInformacao">
                                                 Revisão                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>Para sua máxima segurança e conforto, todos os veículos da <b>BR 22</b> são periodicamente revisados com precisão e qualidade.</p>
+                                                <p>Para sua máxima segurança e conforto, todos os veículos da <b>Carro.com</b> são periodicamente revisados com precisão e qualidade.</p>
                                             </div>
                                         </div>
                                                                                                                     <div class="col-md-4 col-sm-6 col-xs-12">
