@@ -69,7 +69,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-           <li><p class="navbar-text">Bem vindo,faça seu login ou cadastre-se </p></li>
+           <li><p class="navbar-text">Faça seu login ou cadastre-se </p></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Entrar</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">

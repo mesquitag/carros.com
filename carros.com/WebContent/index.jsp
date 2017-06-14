@@ -65,25 +65,13 @@
 	<div id="tamanhoContainer" class="container">
 		<div class="row">
 			<div id="mediaDataRetirada" class="col-xs-12 col-sm-7 col-md-8">
-				<div class="jumbotron center-block">
-						<div class="tituloBusca">
-            <img class="text-center" src="img/tituloBusca.png">
+				<div  class="jumbotron center-block">
+						<div class="tituloBusca" >
+            <img src="img/tituloBusca.png" >
         </div>
 					
-					<form action="ReservaController" method="post" name="frmReserva" class="form-inline">
-						<!-- 
-						-------------------------------------------------
-						  <div class="form-group">
-								<label for="dataInicio">Retirada</label>
-								<input type="text" id="dataInicio" name="dataInicio" class="form-control"  value="<c:out value="${reserva.dataInicio}"/>" />
-								
-																										   
-							
-								<label for="horaSaida">Horas</label>
-								<input type="text" class="form-control" id="horaInicio" placeholder="inicio" value="<c:out value="${reserva.horaInicio}"/>"/>
-							</div>
-						--------------------------------------------------------------	
-							 -->
+					<form id="chekout" action="ReservaController" method="post" name="frmReserva" class="form-inline">
+					
 							<div id="boxBuscaDesk" class=" box-data-reserva">
 							 <!-- Deixa o fundo do campo de data em branco  -->
         
@@ -149,20 +137,114 @@
     </form>
 </div>	
 </div>
+
 			</div>
 			</div>
-	<!-- /container -->
-
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
+			<!-- fim do CHeckout -->
+			<br>
+			<br>
+			<br>
+			
+			 <div class="container-fluid" style="background-color: #f1f2f2; min-height: 600px;">
+        <div  id="text-center" class="container">
+            <div class="col-md-8">
+                <div class="textoInterna">
+                    <p>Antes de alugar seu veículo, consulte os diferenciais da <strong>Carro.com</strong> e as principais condições de contratação.</p>
+                    <div class="container">
+                        <div class="row">
+			 <div class="col-md-7">
+                                               <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="iconeInformacao">
+                                                <img src="img/icones_consumo.png" alt=""/>
+                                            </div>
+                                            <div class="tituloInformacao">
+                                                Consumo                                            </div>
+                                            <div class="descricaoInformacao">
+                                                <p>Aqui você devolve o carro com a quantidade de combustível que recebeu.</p>
+                                            </div>
+                                        </div>
+                                                                                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="iconeInformacao">
+                                                <img src="img/icones_assistencia24h.png" alt=""/>
+                                            </div>
+                                            <div class="tituloInformacao">
+                                                Revisão                                            </div>
+                                            <div class="descricaoInformacao">
+                                                <p>Para sua máxima segurança e conforto, todos os veículos da <b>Carro.com</b> são periodicamente revisados com precisão e qualidade.</p>
+                                            </div>
+                                        </div>
+                                                                                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="iconeInformacao">
+                                                <img src="img/icones_multas.png" alt=""/>
+                                            </div>
+                                            <div class="tituloInformacao">
+                                                Multas                                            </div>
+                                            <div class="descricaoInformacao">
+                                                <p>O pagamento das multas é de responsabilidade única do contratante.</p>
+                                            </div>
+                                        </div>
+                                                                                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="iconeInformacao">
+                                                <img src="img/icones_diaria.png" alt=""/>
+                                            </div>
+                                            <div class="tituloInformacao">
+                                                Diária                                            </div>
+                                            <div class="descricaoInformacao">
+                                                <p>A diária de veículos é de 24 horas, com 1 hora de tolerância. A partir da 25ª hora, será cobrada hora extra (1/6 do valor da diária para cada hora extra), inclusive a hora de tolerância. A diária das coberturas de risco é de 24 horas, com 1 hora de tolerância.</p>
+                                            </div>
+                                        </div>
+                                                                                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="iconeInformacao">
+                                                <img src="img/icone_contratante.png" alt=""/>
+                                            </div>
+                                            <div class="tituloInformacao">
+                                                Contratante                                            </div>
+                                            <div class="descricaoInformacao">
+                                                <p>A idade mínima do contratante é de 21 anos. No momento da entrega do veículo deve portar Carteira de Habilitação (CNH) emitida há pelo menos dois anos.</p>
+                                            </div>
+                                        </div>
+                                                                                                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                            <div class="iconeInformacao">
+                                                <img src="img/icone_preautorizacao.png" alt=""/>
+                                            </div>
+                                            <div class="tituloInformacao">
+                                                Pré-Autorização                                            </div>
+                                            <div class="descricaoInformacao">
+                                                <p>Para locação é necessário emitir uma pré-autorização no cartão de crédito que esteja em nome do contratante. O valor varia de acordo com a categoria e, no caso de não haver pendências, é cancelado ao final do contrato.</p>
+                                            </div>
+                                        </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                </div>
+                                                                                                
+                                                                                                
+			
+	<jsp:include page="rodape.jsp" />		
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  
+   <script src="./js/validator.min.js"></script>
+ 
+  <!--Start Inicio do chat online Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5940a31db3d02e11ecc69d0f/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End do Chat online Script-->
 
 </body>
 

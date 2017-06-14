@@ -1,4 +1,4 @@
-<jsp:include page="menuusuario.jsp" />
+<jsp:include page="menuindex.jsp" />
 	
 	
 	<div class="container">
@@ -15,6 +15,6 @@
 	</div>
 </div>
 <!-- end Container -->
-
+<jsp:include page="rodape.jsp" />
 </body>
 </html>
