@@ -1,5 +1,5 @@
 <%@page import="com.carros.Models.EnumEstado"%>
-<jsp:include page="menuindex.jsp" />
+<jsp:include page="menuadm.jsp" />
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -9,9 +9,9 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron" style="margin-top:3%">
 		<br>        
-        <h2>Novo Usuario</h2>
+        <h2>Usuarios</h2>
 
-			<form id="formExemplo" data-toggle="validator" role="form" method="post" action="UsuarioControl">
+			<form id="formExemplo" data-toggle="validator" role="form" method="post" action="EditControl">
 				<div class="form-group">
 					<label for="email" class="control-label">Email</label> 
 					<input id="email" name="email" class="form-control" placeholder="Digite seu E-mail" type="email"
@@ -123,9 +123,6 @@
 	</div>
 		<!-- End Conteiner -->
 
-
-
-
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -137,7 +134,7 @@
    	<script type="text/javascript" src="./js/jquery.mask.min.js"></script>
    	
     <script src="./js/bootstrap.min.js"></script>
-   	<link href="./css/bootstrap.css" rel="stylesheet"/>
+   <!-- <link href="./css/bootstrap.css" rel="stylesheet"/> -->
     	
 	<script src="./js/validator.min.js"></script>
 	<script src="./js/autocomplete.js"></script>
