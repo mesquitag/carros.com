@@ -112,7 +112,7 @@
 				data: {fileUpload : reader.result}
 			})
 			.done(function(response){
-				alert("Sucesso: Upload realizado parciamente clique em salvar para terminar Cadastro " + response);
+				alert("Sucesso: Upload realizado parciamente clique em salvar para terminar Cadastro: " + response);
 			})
 			.fail(function(xhr,status,errorThrown){
 				alert("Error: "+ xhr.responseText);
