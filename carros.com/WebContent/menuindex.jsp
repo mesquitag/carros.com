@@ -54,8 +54,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Sobre a Carros.com</a></li>
+            <li class="active"><a href="index.jsp">Home</a></li>
+            <li><a href="sobre.jsp">Sobre a Carros.com</a></li>
             <li><a href="#contact">Contato</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Serviços <span class="caret"></span></a>
@@ -65,6 +65,7 @@
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Outros</li>
                 <li><a href="#">Indicação de Carro</a></li>
+                <li><a href="diferencial.jsp">Diferenciais</a></li>
                </ul>
             </li>
           </ul>

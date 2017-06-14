@@ -63,7 +63,7 @@
 
 
 	<div id="tamanhoContainer" class="container">
-		<div class="row">
+		<div class="roww">
 			<div id="mediaDataRetirada" class="col-xs-12 col-sm-7 col-md-8">
 				<div  class="jumbotron center-block">
 						<div class="tituloBusca" >
@@ -151,7 +151,7 @@
                 <div class="textoInterna">
                     <p>Antes de alugar seu veículo, consulte os diferenciais da <strong>Carro.com</strong> e as principais condições de contratação.</p>
                     <div class="container">
-                        <div class="row">
+                        <div class="roww">
 			 <div class="col-md-7">
                                                <div class="col-md-4 col-sm-6 col-xs-12">
                                             <div class="iconeInformacao">
