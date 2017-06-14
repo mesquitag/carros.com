@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.carros.Models.Cliente;
+import com.carros.Models.Endereco;
 import com.carros.Models.Pessoa;
+import com.carros.Models.Telefone;
 import com.carros.util.Conexao;
 
 public class UsuarioDao {
@@ -44,8 +46,43 @@ public class UsuarioDao {
 	}
 
 	public Pessoa ConsultarPorId(int codigo) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection con = Conexao.getConexao();
+		Pessoa cliente = new Pessoa();
+		Telefone telefone = new Telefone();
+		Endereco endereco = new Endereco();
+		int codigoTel = recuperaCodTelefone(codigo);
+		int codigoEnd = recuperaCodEndereco(codigo);
+		TelefoneDao telefoneDao = new TelefoneDao();
+		EnderecoDao enderecoDao = new EnderecoDao();
+		try {
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM pessoa WHERE id = ?;");
+			pstmt.setInt(1, codigo);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				
+				cliente.setId(rs.getInt("id"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setEmail(rs.getString("email"));
+				cliente.setSenha(rs.getString("senha"));
+				cliente.setDataNascimento(rs.getDate("datanascimento"));
+				cliente.setCpf(rs.getString("cpf"));
+				cliente.setRg(rs.getString("rg"));
+				codigoEnd= rs.getInt("endereco_id");
+				codigoTel = rs.getInt("telefone_id");
+			}
+			 telefone = telefoneDao.recuperaTelefoneId(codigoTel);
+			enderecoDao.recuperaEnderecoId(codigoEnd);
+			
+			cliente.setTelefone(telefone);
+			cliente.setEndereco(endereco);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return cliente;
 	}
 
 	public void remover(int codigo) {

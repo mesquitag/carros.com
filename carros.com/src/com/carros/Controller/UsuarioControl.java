@@ -28,7 +28,7 @@ public class UsuarioControl extends HttpServlet {
 	private TelefoneDao telefoneDao; 
 	private  Integer codEndereco;
 	private Integer codTelefone;
-	private static String CADUSUARIO_SUCESS = "/menuusuario.jsp";
+	private static String CADUSUARIO_SUCESS = "/index.jsp";
 	
 
 	

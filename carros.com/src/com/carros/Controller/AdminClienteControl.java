@@ -21,6 +21,7 @@ public class AdminClienteControl extends HttpServlet {
 	private Pessoa cliente; 
 	private UsuarioDao clienteDao;
 	private static String LISTACLIENTE = "./listcliente.jsp";
+	private static String EDITCLIENTE = "./editusuarioadm.jsp";
 	
     public AdminClienteControl() {
         super();
@@ -28,44 +29,42 @@ public class AdminClienteControl extends HttpServlet {
         clienteDao = new UsuarioDao();
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		String forward="";
 		String action = request.getParameter("action");
 
       if (action.equalsIgnoreCase("remover")){
+      	forward = LISTACLIENTE;
           int id = Integer.parseInt(request.getParameter("id"));
           clienteDao.remover(id);
-       
       } 
       
-      if (action.equalsIgnoreCase("alterar")){
-          int id = Integer.parseInt(request.getParameter("id"));
-           cliente = clienteDao.ConsultarPorId(id);
-          request.setAttribute("cliente", cliente); 
+     
+		if (action.equalsIgnoreCase("alterar")){
+         	forward = EDITCLIENTE;
+         	int id = Integer.parseInt(request.getParameter("id"));
+         	cliente = clienteDao.ConsultarPorId(id);
+         	request.setAttribute("cliente", cliente); 
+     
       }
       
       
       
       if(action.equalsIgnoreCase("pesquisa")){
-      	
+      	forward = LISTACLIENTE;
       	if(request.getParameter("nomePesquisa").equals(null) || request.getParameter("nomePesquisa").equalsIgnoreCase("")){
       		request.setAttribute("clientes", clienteDao.listarTodos());
       		
       	}else{
       		clienteDao.listarPorNome(request.getParameter("nomePesquisa"));
-      		
       	}
       	
       }
-      RequestDispatcher view = request.getRequestDispatcher(LISTACLIENTE);
-      view.forward(request, response);
+      
+      RequestDispatcher view = request.getRequestDispatcher(forward);
+      view.forward(request, response); 
+     
   }
-		
-		
-		
-		
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

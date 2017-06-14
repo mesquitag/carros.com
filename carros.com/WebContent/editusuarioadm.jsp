@@ -11,7 +11,7 @@
 		<br>        
         <h2>Usuarios</h2>
 
-			<form id="formExemplo" data-toggle="validator" role="form" method="post" action="EditControl">
+			<form id="formExemplo" data-toggle="validator" role="form" method="post" action="EditClienteControl">
 				<div class="form-group">
 					<label for="email" class="control-label">Email</label> 
 					<input id="email" name="email" class="form-control" placeholder="Digite seu E-mail" type="email"
@@ -39,7 +39,7 @@
 				<div class="form-group col-md-4 ">
 					<label for="dataNascimento" class="control-label">Data de Nascimento</label>
 					<input id="nome" name="dataNascimento" class="form-control" type="date"
-					   value='<fmt:formatDate pattern="dd-MM-yyyy" value="${cliente.dataNascimetno}"/>' required="required">
+					   value='<fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/>' required="required">
 				</div>
 				
 				<div class="form-group col-md-4 ">
@@ -62,7 +62,7 @@
 					<div class="form-group col-md-8 ">
 					<label for="logradouro" class="control-label">logradouro</label>
 					<input id="logradouro" name="logradouro" class="form-control" type="text"
-				 	    required="required" value='<c:out value="${endereco.logradouro}"></c:out>'  >
+				 	    required="required" value='<c:out value="${cliente.endereco.logradouro}"></c:out>'  >
 					</div>
 					
 					<div class="form-group col-md-4 ">
@@ -75,7 +75,7 @@
 				<div class="form-group" >
 					<label for="complemento" class="control-label">complemento</label>
 					<input id="complemento" name="complemento" class="form-control" type="text"
-				 	   value='<c:out value="${endereco.complemento}"></c:out>'  >
+				 	   value='<c:out value="${cliente.endereco.complemento}"></c:out>'  >
 				</div>
 				
 				<div class="row">
@@ -99,7 +99,7 @@
 					<div class="form-group col-md-6" >
 					<label for="telefone" class="control-label">telefone</label>
 					<input id="telefone" name="telefone" class="form-control phone_with_ddd" type="tel"
-				 	   required="required" value='<c:out value="${telefone.telefone}"></c:out>'  >
+				 	   required="required" value='<c:out value="${cliente.telefone.telefone}"></c:out>'  >
 					</div>
 					
 				</div>				

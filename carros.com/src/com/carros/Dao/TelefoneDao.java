@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.carros.Models.Telefone;
 import com.carros.util.Conexao;
@@ -42,6 +43,30 @@ public class TelefoneDao {
 			System.out.println("não foi possivel deletar o telefone");
 			e.printStackTrace();
 		}
+		
+	}
+
+	public Telefone recuperaTelefoneId(int codigoTel) {
+		Telefone telefone = new Telefone();
+		Connection con = Conexao.getConexao();
+		
+		try {
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM telefone WHERE id = ? ");
+			pstmt.setInt(1, codigoTel);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				telefone.setTelefone(rs.getString("telefone"));
+				
+			}
+			pstmt.close();
+			con.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		return telefone;
 		
 	}
 

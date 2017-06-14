@@ -39,7 +39,7 @@
 				<div class="form-group col-md-4 ">
 					<label for="dataNascimento" class="control-label">Data de Nascimento</label>
 					<input id="nome" name="dataNascimento" class="form-control" type="date"
-					   value='<fmt:formatDate pattern="dd-MM-yyyy" value="${cliente.dataNascimetno}"/>' required="required">
+					   value='<fmt:formatDate pattern="dd-MM-yyyy" value="${cliente.dataNascimento}"/>' required="required">
 				</div>
 				
 				<div class="form-group col-md-4 ">
@@ -50,7 +50,7 @@
 				
 				<div class="form-group col-md-4 ">
 					<label for="rg" class="control-label">RG</label>
-					<input id="rg" name="rg" class="form-control" type="text"
+					<input id="rg" name="rg" class="form-control" type="number"
 				 	   maxlength="14" required="required" value='<c:out value="${cliente.rg}"></c:out>'  >
 				</div>
 				</div>
@@ -159,7 +159,7 @@
         console.log ("Digit: ", error.v, " is invalid for the position: ", error.p, ". We expect something like: ", error.e);
       }
     });
-    $('.phone_with_ddd').mask('(00) 0000-0000');	
+    $('.phone_with_ddd').mask('(00) 00000-0000');	
   } );
   </script>
 <jsp:include page="rodape.jsp" />

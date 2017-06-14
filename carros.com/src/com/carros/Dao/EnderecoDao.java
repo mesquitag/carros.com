@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.carros.Models.Endereco;
+import com.carros.Models.EnumEstado;
 import com.carros.util.Conexao;
 
 public class EnderecoDao {
@@ -43,6 +44,28 @@ public class EnderecoDao {
 					e.printStackTrace();
 				}
 		
+	}
+
+	public Endereco recuperaEnderecoId(int codigoEnd) {
+		Connection con = Conexao.getConexao();
+		Endereco endereco = new Endereco();
+		 	
+		try {
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM endereco WHERE id = ?" );
+			pstmt.setInt(1, codigoEnd);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()){
+				endereco.setLogradouro(rs.getString("logradouro"));
+				endereco.setNumero(rs.getString("numero"));
+				endereco.setComplemento(rs.getString("complemento"));
+				endereco.setCep(rs.getString("cep"));
+				endereco.setUf(EnumEstado.valueOf(rs.getString("uf")));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return endereco;
 	}
 
 }
