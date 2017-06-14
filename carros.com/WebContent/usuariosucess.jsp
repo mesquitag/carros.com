@@ -1,4 +1,4 @@
-<jsp:include page="menuusuario.jsp" />
+<jsp:include page="menuindex.jsp" />
 	
 	
 	<div class="container">
@@ -15,6 +15,6 @@
 	</div>
 </div>
 <!-- end Container -->
-<iframe src='//gifs.com/embed/ferrari-8q49K5' frameborder='0' scrolling='no' width='50%' height='500px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>
+<jsp:include page="rodape.jsp" />
 </body>
 </html>

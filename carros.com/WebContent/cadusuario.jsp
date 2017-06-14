@@ -162,6 +162,6 @@
     $('.phone_with_ddd').mask('(00) 0000-0000');	
   } );
   </script>
-
+<jsp:include page="rodape.jsp" />
 </body>
 </html>

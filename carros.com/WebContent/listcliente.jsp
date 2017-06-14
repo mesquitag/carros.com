@@ -62,7 +62,7 @@
 	</div>
 </div>
 <!-- end Container -->
-
+<jsp:include page="rodape.jsp" />
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
