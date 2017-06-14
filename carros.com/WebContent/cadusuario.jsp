@@ -137,7 +137,7 @@
    	<script type="text/javascript" src="./js/jquery.mask.min.js"></script>
    	
     <script src="./js/bootstrap.min.js"></script>
-   	<link href="./css/bootstrap.css" rel="stylesheet"/>
+   <!--  	<link href="./css/bootstrap.css" rel="stylesheet"/> -->
     	
 	<script src="./js/validator.min.js"></script>
 	<script src="./js/autocomplete.js"></script>
