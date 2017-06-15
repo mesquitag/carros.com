@@ -71,7 +71,7 @@ public class UsuarioDao {
 				codigoTel = rs.getInt("telefone_id");
 			}
 			 telefone = telefoneDao.recuperaTelefoneId(codigoTel);
-			enderecoDao.recuperaEnderecoId(codigoEnd);
+			 endereco = enderecoDao.recuperaEnderecoId(codigoEnd);
 			
 			cliente.setTelefone(telefone);
 			cliente.setEndereco(endereco);
