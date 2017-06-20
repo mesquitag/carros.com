@@ -116,17 +116,6 @@
 
 	<hr class="dl-horizontal">
 	
-	<!-- Inicio conteiner -->
-	<div class="container">
-		
-	
-	</div>
-		<!-- End Conteiner -->
-
-
-
-
-	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

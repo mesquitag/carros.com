@@ -55,13 +55,16 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="cadveiculos.jsp">Carros</a></li>
-                <li><a href="#">Aluguel</a></li>
-                <li><a href="#">TESTE</a></li>
+              <li class="dropdown-header text-center">Cadastros</li>
+                <li><a href="cadveiculos.jsp">Carro</a></li>
+                <li><a href="cadusuario.jsp">Cliente</a></li>
+                <li><a href="cadfuncionario.jsp">Funcionario</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Administrativo</li>
-                <li><a href="#">Funcionario</a></li>
+                <li class="dropdown-header text-center">Listas</li>
+                <li><a href="listcarros">Carros</a></li>
                 <li><a href="listcliente.jsp">Clientes</a></li>
+                <li><a href="listfuncionarios">Funcionarios</a></li>
+                
               </ul>
             </li>
           </ul>

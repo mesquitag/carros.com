@@ -1,4 +1,7 @@
 <jsp:include page="menuindex.jsp" />
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
 
@@ -19,8 +22,8 @@
     <div class="item active">
       <img src="img/banner1-2.jpg" alt="Carros.com">
       <div class="carousel-caption">
-       <h3>Tudo o que vocÍ precisa</h3>
-        <p>Antes de alugar seu carro, confira as principais informaÁıes sobre nossos serviÁos</p>
+       <h3>Tudo o que voc√™ precisa</h3>
+        <p>Antes de alugar seu carro, confira as principais informa√ß√µes sobre nossos servi√ßos</p>
       
       </div>
     </div>
@@ -28,7 +31,7 @@
       <img src="img/banner3-2.jpg" alt="Carros.com">
       <div class="carousel-caption">
       <h3>Alugando com a Carro.com</h3>
-        <p>ConheÁa nossos diferenciais e aproveite o melhor custo benefÌcio da cidade</p>
+        <p>Conhe√ßa nossos diferenciais e aproveite o melhor custo benef√≠cio da cidade</p>
       </div>
     </div>
     <div class="item">
@@ -131,8 +134,8 @@
         </div>
 
         <button id="btn-proximo-passo" type="button" style="width: 100%; margin-top: 25px;" class="btn btn-danger ">
-            PR”XIMO PASSO<br>
-            <span style="font-size: 9px; font-family: 'AvenirLTStd65Medium';">ESCOLHA DO VEÕCULO</span>
+            PR√ìXIMO PASSO<br>
+            <span style="font-size: 9px; font-family: 'AvenirLTStd65Medium';">ESCOLHA DO VE√çCULO</span>
         </button>
     </form>
 </div>	
@@ -149,7 +152,7 @@
         <div  id="text-center" class="container">
             <div class="col-md-8">
                 <div class="textoInterna">
-                    <p>Antes de alugar seu veÌculo, consulte os diferenciais da <strong>Carro.com</strong> e as principais condiÁıes de contrataÁ„o.</p>
+                    <p>Antes de alugar seu ve√≠culo, consulte os diferenciais da <strong>Carro.com</strong> e as principais condi√ß√µes de contrata√ß√£o.</p>
                     <div class="container">
                         <div class="roww">
 			 <div class="col-md-7">
@@ -160,7 +163,7 @@
                                             <div class="tituloInformacao">
                                                 Consumo                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>Aqui vocÍ devolve o carro com a quantidade de combustÌvel que recebeu.</p>
+                                                <p>Aqui voc√™ devolve o carro com a quantidade de combust√≠vel que recebeu.</p>
                                             </div>
                                         </div>
                                                                                                                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -168,9 +171,9 @@
                                                 <img src="img/icones_assistencia24h.png" alt=""/>
                                             </div>
                                             <div class="tituloInformacao">
-                                                Revis„o                                            </div>
+                                                Revis√£o                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>Para sua m·xima seguranÁa e conforto, todos os veÌculos da <b>Carro.com</b> s„o periodicamente revisados com precis„o e qualidade.</p>
+                                                <p>Para sua m√°xima seguran√ßa e conforto, todos os ve√≠culos da <b>Carro.com</b> s√£o periodicamente revisados com precis√£o e qualidade.</p>
                                             </div>
                                         </div>
                                                                                                                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -180,7 +183,7 @@
                                             <div class="tituloInformacao">
                                                 Multas                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>O pagamento das multas È de responsabilidade ˙nica do contratante.</p>
+                                                <p>O pagamento das multas √© de responsabilidade √∫nica do contratante.</p>
                                             </div>
                                         </div>
                                                                                                                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -188,9 +191,9 @@
                                                 <img src="img/icones_diaria.png" alt=""/>
                                             </div>
                                             <div class="tituloInformacao">
-                                                Di·ria                                            </div>
+                                                Di√°ria                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>A di·ria de veÌculos È de 24 horas, com 1 hora de toler‚ncia. A partir da 25™ hora, ser· cobrada hora extra (1/6 do valor da di·ria para cada hora extra), inclusive a hora de toler‚ncia. A di·ria das coberturas de risco È de 24 horas, com 1 hora de toler‚ncia.</p>
+                                                <p>A di√°ria de ve√≠culos √© de 24 horas, com 1 hora de toler√¢ncia. A partir da 25¬™ hora, ser√° cobrada hora extra (1/6 do valor da di√°ria para cada hora extra), inclusive a hora de toler√¢ncia. A di√°ria das coberturas de risco √© de 24 horas, com 1 hora de toler√¢ncia.</p>
                                             </div>
                                         </div>
                                                                                                                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -200,7 +203,7 @@
                                             <div class="tituloInformacao">
                                                 Contratante                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>A idade mÌnima do contratante È de 21 anos. No momento da entrega do veÌculo deve portar Carteira de HabilitaÁ„o (CNH) emitida h· pelo menos dois anos.</p>
+                                                <p>A idade m√≠nima do contratante √© de 21 anos. No momento da entrega do ve√≠culo deve portar Carteira de Habilita√ß√£o (CNH) emitida h√° pelo menos dois anos.</p>
                                             </div>
                                         </div>
                                                                                                                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -208,9 +211,9 @@
                                                 <img src="img/icone_preautorizacao.png" alt=""/>
                                             </div>
                                             <div class="tituloInformacao">
-                                                PrÈ-AutorizaÁ„o                                            </div>
+                                                Pr√©-Autoriza√ß√£o                                            </div>
                                             <div class="descricaoInformacao">
-                                                <p>Para locaÁ„o È necess·rio emitir uma prÈ-autorizaÁ„o no cart„o de crÈdito que esteja em nome do contratante. O valor varia de acordo com a categoria e, no caso de n„o haver pendÍncias, È cancelado ao final do contrato.</p>
+                                                <p>Para loca√ß√£o √© necess√°rio emitir uma pr√©-autoriza√ß√£o no cart√£o de cr√©dito que esteja em nome do contratante. O valor varia de acordo com a categoria e, no caso de n√£o haver pend√™ncias, √© cancelado ao final do contrato.</p>
                                             </div>
                                         </div>
                                                                                                 </div>
@@ -244,7 +247,7 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End do Chat online Script-->
+
 
 </body>
 

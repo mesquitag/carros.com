@@ -41,13 +41,9 @@
             <div class="col-md-5" style="background-color: #f1f2f2; min-height: 165px;">
                 <div class="menuRodape">
                     <ul>
-                        <li><a href="index.jsp">A Carros.com</a></li>
-                        <li><a href="#">Atendimento
-                                Empresarial</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Reservas</a></li>
-                        <li><a href="#">Veículos e Tarifas</a></li>
-                        <li><a href="#">Informações Importantes</a></li>
+                        <li><a href="sobre.jsp">A Carros.com</a></li>
+                        <li><a href="https://goo.gl/Q8QrgY" target="_blank">Contato</a></li>
+                        <li><a href="index.jsp">Informações Importantes</a></li>
                     </ul>
                 </div>
             </div>
@@ -75,5 +71,5 @@
 
 
 </footer>
-
+<link href="./css/main.css" rel="stylesheet">
 

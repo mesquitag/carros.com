@@ -55,15 +55,15 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.jsp">Home</a></li>
-            <li><a href="sobre.jsp">Sobre a Carros.com</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="sobre.jsp">a Carros.com</a></li>
+            <li><a href="https://goo.gl/Q8QrgY" target="_blank">Contato</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Serviços <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Reservas</a></li>
                 <li><a href="#">Aluguel do Carro</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Outros</li>
+                <li class="dropdown-header text-center">Outros</li>
                 <li><a href="#">Indicação de Carro</a></li>
                 <li><a href="diferencial.jsp">Diferenciais</a></li>
                </ul>
