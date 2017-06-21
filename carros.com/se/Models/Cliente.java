@@ -111,4 +111,13 @@ public class Cliente {
 	 public void setRendaMensal(RendaMensal rendaMensal){
 		 this.rendaMensal = rendaMensal;
 	 }
+	 ///////////////
+	 public TipoCombustivel getTipoCombustivel(){
+		 return tipoCombustivel;
+	 }
+	 public void setTipoCombustivel(TipoCombustivel tipoCombustivel ){
+		 this.tipoCombustivel = tipoCombustivel;
+		 
+	 }
+	 
 }
