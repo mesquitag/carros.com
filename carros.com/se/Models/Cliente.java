@@ -8,6 +8,16 @@ public class Cliente {
 	private RendaMensal rendaMensal;
 	private TipoCombustivel tipoCombustivel;
 	
+	public Cliente(Categoria categoria, Finalidade finalidade, QtdePassageiro qtdePassageiro, RendaMensal rendaMensal,
+				   TipoCombustivel tipoCombustivel){
+		
+		this.categoria = categoria;
+		this.finalidade = finalidade;
+		this.qtdePassageiro = qtdePassageiro;
+		this.rendaMensal = rendaMensal;
+		this.tipoCombustivel = tipoCombustivel;
+	}
+	
 	public enum Categoria{
 		HATCH(1), SEDA(2), PICAPE(3), UTILITARIO_ESPORTIVO(4), MONOVOLUME(5), WAGON_PERUA(6), CONVERSIVEL_CUPE(7),VAN_FURGAO(8);
 		

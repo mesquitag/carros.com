@@ -4,10 +4,12 @@ public class Carros {
 
 	private CapacidadePassageiros capacidade;
 	private CarroIndicavel carro;
-	private DisponibilidadeFinaceira diponibilidadeFinanca;
-	private FlexAbastecimento flexAbastecimetno;
+	private DisponibilidadeFinanceira disponibilidadeFinanca;
+	private FlexAbastecimento flexAbastecimento;
 	private ForcaMotor motor;
 	private QtdePortas qtdePortas;
+	
+	
 	
 	public enum CapacidadePassageiros{
 		BAIXA_ATE_2_OCUPANTES(1), MEDIA_5_OCUPANTES(2),ALTA_6_OU_MAIS_OCUPANTES(3);
@@ -38,12 +40,12 @@ public class Carros {
 		}
 	}
 	
-	public enum DisponibilidadeFinaceira{
+	public enum DisponibilidadeFinanceira{
 		BAIXA_ATE_R$100(1), MEDIA_ATE_R$300(2), ALTA_ATE_R$300_OU_ACIMA(3);
 		
 		private final int valor;
 		
-		DisponibilidadeFinaceira(int valorOpcao) {
+		DisponibilidadeFinanceira(int valorOpcao) {
 			valor = valorOpcao;
 		}
 		
@@ -94,5 +96,50 @@ public class Carros {
 			return valor;
 		}
 	}
+	//GETS e SETS
+	
+	public CapacidadePassageiros getCapacidadePassageiros(){
+		return capacidade;
+	}
+	public void setCapacidadePassageiros(CapacidadePassageiros capacidade){
+		this.capacidade = capacidade;
+	}
+	///
+	public CarroIndicavel getCarroIndicavel(){
+		return carro;
+	}
+	public void setCarroIndicavel(CarroIndicavel carro){
+		this.carro = carro;
+	}
+	///
+	public DisponibilidadeFinanceira getDisponibilidadeFinaca(){
+		return disponibilidadeFinanca;
+		
+	}
+	public void setDisponibilidadeFinaceira(DisponibilidadeFinanceira disponibilidadeFinanca){
+		this.disponibilidadeFinanca = disponibilidadeFinanca;
+	}
+	///
+	public FlexAbastecimento getFlexAbastecimento(){
+		return flexAbastecimento;
+	}
+	public void setFlexAbastecimento(FlexAbastecimento flexAbastecimento){
+		this.flexAbastecimento = flexAbastecimento;
+	}
+	///
+	public ForcaMotor getForcaMotor(){
+		return motor;
+	}
+	public void setForcaMotor(ForcaMotor motor){
+		this.motor = motor;
+	}
+	///
+	public QtdePortas getQtdePortas(){
+		return qtdePortas;
+	}
+	public void setQtdePortas(QtdePortas qtdePortas){
+		this.qtdePortas = qtdePortas;
+	}
+	
 	
 }
