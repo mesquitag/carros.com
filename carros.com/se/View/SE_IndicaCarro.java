@@ -1,6 +1,7 @@
 package View;
 
 import org.easyrules.api.RulesEngine;
+import static org.easyrules.core.RulesEngineBuilder.aNewRulesEngine;
 
 import Models.Carros;
 import Models.Cliente;
