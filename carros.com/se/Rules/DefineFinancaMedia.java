@@ -18,7 +18,7 @@ public class DefineFinancaMedia {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getRendaMensal()==Cliente.RendaMensal.MEDIA_ATE_4_SALARIOS){
+		if(cliente.getRendaMensal()==cliente.getRendaMensal().MEDIA_ATE_4_SALARIOS){
 			return true;
 		}
 		return false;
@@ -26,11 +26,12 @@ public class DefineFinancaMedia {
 	
 	@Action(order = 1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Disponibilidade financeira para aluguel definida - MEDIA");
+		System.out.println("Disponibilidade financeira para aluguel definida - ATE_R$300");
 		carro.setDisponibilidadeFinaceira(Carros.DisponibilidadeFinanceira.MEDIA_ATE_R$300);
 	}
 	
-	public DefineFinancaMedia(Carros carro, Cliente cliente){
+	public DefineFinancaMedia(Cliente cliente,Carros carro){
+		super();
 		this.carro = carro;
 		this.cliente = cliente;
 	}

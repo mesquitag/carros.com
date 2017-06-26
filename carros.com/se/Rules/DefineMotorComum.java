@@ -18,7 +18,7 @@ public class DefineMotorComum {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getFinalidade()==Cliente.Finalidade.DOMESTICO_PASSEIO){
+		if(cliente.getFinalidade()==cliente.getFinalidade().DOMESTICO_PASSEIO){
 			return true;
 		}
 		return false;
@@ -27,11 +27,12 @@ public class DefineMotorComum {
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Força do motor definida como - COMUM");
+		System.out.println("Força do motor definida como - COMUM 1.0 até 2.0");
 		carro.setForcaMotor(Carros.ForcaMotor.COMUM);
 	}
 
-	public DefineMotorComum(Cliente cliente, Carros carro){
+	public DefineMotorComum(Cliente cliente,Carros carro){
+		super();
 		this.cliente = cliente;
 		this.carro = carro;
 	}

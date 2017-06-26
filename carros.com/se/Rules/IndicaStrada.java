@@ -5,6 +5,7 @@ import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
 import Models.Carros;
+import Models.Cliente;
 
 
 @Rule(name = "Indica Strada ", description = "regra criada para indicar"
@@ -12,17 +13,16 @@ import Models.Carros;
 public class IndicaStrada {
 
     private Carros carro;
-
+    private Cliente cliente;
     @Condition
     public boolean when() {
 
-        if(carro.getCapacidadePassageiros() == Carros.CapacidadePassageiros.BAIXA_ATE_2_OCUPANTES &&
-           carro.getForcaMotor() == Carros.ForcaMotor.COMUM &&
-           carro.getQtdePortas() == Carros.QtdePortas.TRES_PORTAS &&
-           carro.getFlexAbastecimento() == Carros.FlexAbastecimento.DISPONIVEL &&
-           carro.getDisponibilidadeFinaca() == Carros.DisponibilidadeFinanceira.MEDIA_ATE_R$300){
+        if(cliente.getFinalidade() ==  cliente.getFinalidade().DOMESTICO_PASSEIO &&
+      	       cliente.getQtdePassageiro() == cliente.getQtdePassageiro().DUAS_PESSOAS &&
+      	       cliente.getRendaMensal() == cliente.getRendaMensal().MEDIA_ATE_4_SALARIOS &&
+      	       cliente.getTipoCombustivel() == cliente.getTipoCombustivel().FLEX_ETANOL_E_GASOLINA){
 
-           return true;    
+           return true;     
         }
         
         return false;
@@ -35,7 +35,9 @@ public class IndicaStrada {
         carro.setCarroIndicavel(Carros.CarroIndicavel.STRADA);
     }
 
-    public IndicaStrada(Carros carro) {
-        this.carro = carro;
+    public IndicaStrada(Cliente cliente,Carros carro) {
+        super();
+    	this.cliente = cliente;
+    	this.carro = carro;
     }
 }

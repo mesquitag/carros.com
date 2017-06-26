@@ -18,7 +18,7 @@ public class DefineQtdePortasServico{
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getFinalidade()==Cliente.Finalidade.TRANPORTE_CARGAS){
+		if(cliente.getFinalidade()==cliente.getFinalidade().TRANPORTE_CARGAS){
 			return true;
 		}
 		return false;
@@ -27,11 +27,12 @@ public class DefineQtdePortasServico{
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Quantidade de portas do carro definida - SERVICOS");
+		System.out.println("Quantidade de portas do carro definida - SERVICOS QUATRO_PORTAS (MALA INCLUSA)");
 		carro.setQtdePortas(Carros.QtdePortas.QUATRO_PORTAS);
 	}
 
 	public DefineQtdePortasServico(Cliente cliente, Carros carro){
+		super();
 		this.cliente = cliente;
 		this.carro = carro;
 	}

@@ -5,6 +5,7 @@ import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
 import Models.Carros;
+import Models.Cliente;
 
 
 @Rule(name = "Indica Gol G6 ", description = "regra criada para indicar"
@@ -12,15 +13,15 @@ import Models.Carros;
 public class IndicaGolG6 {
 
     private Carros carro;
+    private Cliente cliente;
 
     @Condition
     public boolean when() {
 
-        if(carro.getCapacidadePassageiros() == Carros.CapacidadePassageiros.MEDIA_5_OCUPANTES &&
-           carro.getForcaMotor() == Carros.ForcaMotor.COMUM &&
-           carro.getQtdePortas() == Carros.QtdePortas.CINCO_PORTAS &&
-           carro.getFlexAbastecimento() == Carros.FlexAbastecimento.DISPONIVEL &&
-           carro.getDisponibilidadeFinaca() == Carros.DisponibilidadeFinanceira.BAIXA_ATE_R$100){
+        if(cliente.getFinalidade() ==  cliente.getFinalidade().DOMESTICO_PASSEIO &&
+           cliente.getQtdePassageiro() == cliente.getQtdePassageiro().	QUATRO_A_CINCO_PESSOAS &&
+           cliente.getRendaMensal() == cliente.getRendaMensal().COMUM_ATE_2_SALARIOS &&
+           cliente.getTipoCombustivel() == cliente.getTipoCombustivel().FLEX_ETANOL_E_GASOLINA){
 
            return true;    
         }
@@ -35,8 +36,10 @@ public class IndicaGolG6 {
         carro.setCarroIndicavel(Carros.CarroIndicavel.GOL_G6);
     }
 
-    public IndicaGolG6(Carros carro) {
-        this.carro = carro;
+    public IndicaGolG6(Cliente cliente,Carros carro) {
+        super();
+    	this.cliente = cliente;
+    	this.carro = carro;
     }
 
 }

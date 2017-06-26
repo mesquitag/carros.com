@@ -17,7 +17,7 @@ public class DefineMotorTurbo {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getFinalidade()==Cliente.Finalidade.LUXO){
+		if(cliente.getFinalidade()==cliente.getFinalidade().LUXO){
 			return true;
 		}
 		return false;
@@ -26,11 +26,12 @@ public class DefineMotorTurbo {
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Força do motor definida como - TURBO");
+		System.out.println("Força do motor definida como - TURBO acima de 3.0");
 		carro.setForcaMotor(Carros.ForcaMotor.TURBO);
 	}
 
-	public DefineMotorTurbo(Cliente cliente, Carros carro){
+	public DefineMotorTurbo(Cliente cliente,Carros carro){
+		super();
 		this.cliente = cliente;
 		this.carro = carro;
 	}

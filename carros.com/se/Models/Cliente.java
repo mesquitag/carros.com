@@ -2,35 +2,23 @@ package Models;
 
 public class Cliente {
 	
-	private Categoria categoria;
+	
 	private Finalidade finalidade;
 	private QtdePassageiro qtdePassageiro;
 	private RendaMensal rendaMensal;
 	private TipoCombustivel tipoCombustivel;
 	
-	public Cliente(Categoria categoria, Finalidade finalidade, QtdePassageiro qtdePassageiro, RendaMensal rendaMensal,
-				   TipoCombustivel tipoCombustivel){
+	public Cliente( Finalidade finalidade, QtdePassageiro qtdePassageiro,
+			RendaMensal rendaMensal,TipoCombustivel tipoCombustivel){
 		
-		this.categoria = categoria;
+		
+		super();
 		this.finalidade = finalidade;
 		this.qtdePassageiro = qtdePassageiro;
 		this.rendaMensal = rendaMensal;
 		this.tipoCombustivel = tipoCombustivel;
 	}
 	
-	public enum Categoria{
-		HATCH(1), SEDA(2), PICAPE(3), UTILITARIO_ESPORTIVO(4), MONOVOLUME(5), WAGON_PERUA(6), CONVERSIVEL_CUPE(7),VAN_FURGAO(8);
-		
-		private final int valor;
-		
-		Categoria(int valorOpcao){
-			valor = valorOpcao;
-		}
-	
-		public int getValor(){
-			return valor;
-		}
-	}
 	
 		
 	public enum Finalidade{
@@ -90,15 +78,7 @@ public class Cliente {
 	}
 
 	//GETS e SETS
-	public Categoria getCategoria(){
-		return categoria;
-		
-	}
 	
-	public void setCategoria(Categoria categoria){
-		this.categoria = categoria;
-	}
-	//////////////
 	public Finalidade getFinalidade(){
 		return finalidade;
 	}

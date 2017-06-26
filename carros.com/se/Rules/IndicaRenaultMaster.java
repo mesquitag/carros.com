@@ -5,6 +5,7 @@ import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
 import Models.Carros;
+import Models.Cliente;
 
 
 @Rule(name = "Indica RENAULT MASTER  ", description = "regra criada para indicar"
@@ -12,15 +13,14 @@ import Models.Carros;
 public class IndicaRenaultMaster{
 
     private Carros carro;
-
+    private Cliente cliente;
     @Condition
     public boolean when() {
 
-        if(carro.getCapacidadePassageiros() == Carros.CapacidadePassageiros.BAIXA_ATE_2_OCUPANTES &&
-           carro.getForcaMotor() == Carros.ForcaMotor.FORTE &&
-           carro.getQtdePortas() == Carros.QtdePortas.QUATRO_PORTAS &&
-           carro.getFlexAbastecimento() == Carros.FlexAbastecimento.INDISPONIVEL &&
-           carro.getDisponibilidadeFinaca() == Carros.DisponibilidadeFinanceira.MEDIA_ATE_R$300){
+        if(cliente.getFinalidade() ==  cliente.getFinalidade().TRANPORTE_CARGAS &&
+      	       cliente.getQtdePassageiro() == cliente.getQtdePassageiro().DUAS_PESSOAS &&
+      	       cliente.getRendaMensal() == cliente.getRendaMensal().ALTA_ACIMA_DE_4_SALARIOS &&
+      	       cliente.getTipoCombustivel() == cliente.getTipoCombustivel().DIESEL){
 
            return true;    
         }
@@ -35,7 +35,9 @@ public class IndicaRenaultMaster{
         carro.setCarroIndicavel(Carros.CarroIndicavel.RENAULT_MASTER);
     }
 
-    public IndicaRenaultMaster(Carros carro) {
-        this.carro = carro;
+    public IndicaRenaultMaster(Cliente cliente,Carros carro) {
+        super();
+    	this.cliente = cliente;
+    	this.carro = carro;
     }
 }

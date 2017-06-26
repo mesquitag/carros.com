@@ -18,7 +18,7 @@ public class DefineQtdePortasEsportivo {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getFinalidade()==Cliente.Finalidade.LUXO){
+		if(cliente.getFinalidade()==cliente.getFinalidade().LUXO){
 			return true;
 		}
 		return false;
@@ -27,11 +27,12 @@ public class DefineQtdePortasEsportivo {
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Quantidade de portas do carro definida - COMUM");
+		System.out.println("Quantidade de portas do carro definida - TRES_PORTAS (MALA INCLUSA)");
 		carro.setQtdePortas(Carros.QtdePortas.TRES_PORTAS);
 	}
 
 	public DefineQtdePortasEsportivo(Cliente cliente, Carros carro){
+		super();
 		this.cliente = cliente;
 		this.carro = carro;
 	}

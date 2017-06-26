@@ -5,6 +5,7 @@ import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
 import Models.Carros;
+import Models.Cliente;
 
 
 @Rule(name = "Indica FORD RANGER ", description = "regra criada para indicar"
@@ -12,15 +13,14 @@ import Models.Carros;
 public class IndicaFordRanger {
 
     private Carros carro;
-
+    private Cliente cliente;
     @Condition
     public boolean when() {
 
-        if(carro.getCapacidadePassageiros() == Carros.CapacidadePassageiros.ALTA_6_OU_MAIS_OCUPANTES &&
-           carro.getForcaMotor() == Carros.ForcaMotor.FORTE &&
-           carro.getQtdePortas() == Carros.QtdePortas.CINCO_PORTAS &&
-           carro.getFlexAbastecimento() == Carros.FlexAbastecimento.DISPONIVEL &&
-           carro.getDisponibilidadeFinaca() == Carros.DisponibilidadeFinanceira.ALTA_ATE_R$300_OU_ACIMA){
+        if(cliente.getFinalidade() ==  cliente.getFinalidade().TRANPORTE_CARGAS &&
+      	       cliente.getQtdePassageiro() == cliente.getQtdePassageiro().ACIMA_DE_CINCO &&
+      	       cliente.getRendaMensal() == cliente.getRendaMensal().ALTA_ACIMA_DE_4_SALARIOS &&
+      	       cliente.getTipoCombustivel() == cliente.getTipoCombustivel().DIESEL){
 
            return true;    
         }
@@ -31,11 +31,13 @@ public class IndicaFordRanger {
 
     @Action(order = 1)
     public void primeiraAcao() throws Exception {
-        System.out.println("O modelo indicado e o FORD RANGER !");
+        System.out.println("O modelo indicado e a FORD RANGER !");
         carro.setCarroIndicavel(Carros.CarroIndicavel.RANGER);
     }
 
-    public IndicaFordRanger(Carros carro) {
-        this.carro = carro;
+    public IndicaFordRanger(Cliente cliente,Carros carro) {
+        super();
+    	this.cliente = cliente;
+    	this.carro = carro;
     }
 }

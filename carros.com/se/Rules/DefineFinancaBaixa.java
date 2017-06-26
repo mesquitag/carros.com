@@ -20,7 +20,7 @@ public class DefineFinancaBaixa {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getRendaMensal()== Cliente.RendaMensal.COMUM_ATE_2_SALARIOS){
+		if(cliente.getRendaMensal()==cliente.getRendaMensal().COMUM_ATE_2_SALARIOS){
 			return true;
 		}
 		return false;
@@ -28,12 +28,13 @@ public class DefineFinancaBaixa {
 	
 	@Action(order = 1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Disponibilidade financeira para aluguel definida - Baixa");
+		System.out.println("Disponibilidade financeira para aluguel definida - ATE_R$100");
 		carro.setDisponibilidadeFinaceira(Carros.DisponibilidadeFinanceira.BAIXA_ATE_R$100);
 		
 	}
 	
-	public DefineFinancaBaixa(Carros carro , Cliente cliente){
+	public DefineFinancaBaixa(Cliente cliente,Carros carro){
+		super();
 		this.carro = carro;
 		this.cliente = cliente;
 	}

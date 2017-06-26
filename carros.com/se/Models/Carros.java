@@ -11,6 +11,8 @@ public class Carros {
 	
 	
 	
+	
+	
 	public enum CapacidadePassageiros{
 		BAIXA_ATE_2_OCUPANTES(1), MEDIA_5_OCUPANTES(2),ALTA_6_OU_MAIS_OCUPANTES(3);
 		

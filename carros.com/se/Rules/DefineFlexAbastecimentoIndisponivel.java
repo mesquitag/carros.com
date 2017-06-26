@@ -18,9 +18,9 @@ public class DefineFlexAbastecimentoIndisponivel {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getTipoCombustivel() == Cliente.TipoCombustivel.GASOLINA ||
-           cliente.getTipoCombustivel() == Cliente.TipoCombustivel.ETANOL ||
-           cliente.getTipoCombustivel() == Cliente.TipoCombustivel.DIESEL){
+		if(cliente.getTipoCombustivel() == cliente.getTipoCombustivel().GASOLINA ||
+           cliente.getTipoCombustivel() == cliente.getTipoCombustivel().ETANOL ||
+           cliente.getTipoCombustivel() == cliente.getTipoCombustivel().DIESEL){
 			
             return true;
 		}
@@ -34,7 +34,8 @@ public class DefineFlexAbastecimentoIndisponivel {
 			
 	}
 	
-	public DefineFlexAbastecimentoIndisponivel(Carros carro, Cliente cliente){
+	public DefineFlexAbastecimentoIndisponivel(Cliente cliente,Carros carro){
+		super();
 		this.carro = carro;
 		this.cliente = cliente;
 	}

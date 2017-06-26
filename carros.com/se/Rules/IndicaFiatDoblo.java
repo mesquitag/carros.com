@@ -5,6 +5,7 @@ import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
 import Models.Carros;
+import Models.Cliente;
 
 
 @Rule(name = "Indica FIAT DOBLO ", description = "regra criada para indicar"
@@ -12,15 +13,14 @@ import Models.Carros;
 public class IndicaFiatDoblo {
 
     private Carros carro;
-
+    private Cliente cliente;
     @Condition
     public boolean when() {
 
-        if(carro.getCapacidadePassageiros() == Carros.CapacidadePassageiros.MEDIA_5_OCUPANTES &&
-           carro.getForcaMotor() == Carros.ForcaMotor.COMUM &&
-           carro.getQtdePortas() == Carros.QtdePortas.CINCO_PORTAS &&
-           carro.getFlexAbastecimento() == Carros.FlexAbastecimento.DISPONIVEL &&
-           carro.getDisponibilidadeFinaca() == Carros.DisponibilidadeFinanceira.ALTA_ATE_R$300_OU_ACIMA){
+        if(cliente.getFinalidade() ==  cliente.getFinalidade().DOMESTICO_PASSEIO &&
+     	       cliente.getQtdePassageiro() == cliente.getQtdePassageiro().QUATRO_A_CINCO_PESSOAS &&
+     	       cliente.getRendaMensal() == cliente.getRendaMensal().ALTA_ACIMA_DE_4_SALARIOS &&
+     	       cliente.getTipoCombustivel() == cliente.getTipoCombustivel().GASOLINA){
 
            return true;    
         }
@@ -35,7 +35,9 @@ public class IndicaFiatDoblo {
         carro.setCarroIndicavel(Carros.CarroIndicavel.DOBLO);
     }
 
-    public IndicaFiatDoblo(Carros carro) {
-        this.carro = carro;
+    public IndicaFiatDoblo(Cliente cliente,Carros carro) {
+        super();
+    	this.cliente = cliente;
+    	this.carro = carro;
     }
 }

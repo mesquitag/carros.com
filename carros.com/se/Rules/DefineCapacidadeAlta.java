@@ -18,7 +18,7 @@ public class DefineCapacidadeAlta {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getQtdePassageiro() == Cliente.QtdePassageiro.ACIMA_DE_CINCO){
+		if(cliente.getQtdePassageiro() == cliente.getQtdePassageiro().ACIMA_DE_CINCO){
 			return true;
 		}
 		return false;
@@ -26,12 +26,13 @@ public class DefineCapacidadeAlta {
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Capacidade de passageiros definida como - ALTA");
+		System.out.println("Capacidade de passageiros definida como - 6 OU MAIS OCUPANTES ");
 		carro.setCapacidadePassageiros(Carros.CapacidadePassageiros.ALTA_6_OU_MAIS_OCUPANTES);
 			
 	}
 	
-	public DefineCapacidadeAlta(Carros carro, Cliente cliente){
+	public DefineCapacidadeAlta(Cliente cliente,Carros carro){
+		super();
 		this.carro = carro;
 		this.cliente = cliente;
 	}

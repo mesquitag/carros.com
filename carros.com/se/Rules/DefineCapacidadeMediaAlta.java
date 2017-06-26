@@ -18,7 +18,7 @@ public class DefineCapacidadeMediaAlta {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getQtdePassageiro()== Cliente.QtdePassageiro.QUATRO_A_CINCO_PESSOAS || cliente.getQtdePassageiro()==Cliente.QtdePassageiro.ACIMA_DE_CINCO){
+		if(cliente.getQtdePassageiro()== cliente.getQtdePassageiro().QUATRO_A_CINCO_PESSOAS){
 			return true;
 		}
 		return false;
@@ -27,16 +27,13 @@ public class DefineCapacidadeMediaAlta {
 	@Action(order=1)
 	public void primeriaAcao()throws Exception{
 		
-		if(cliente.getQtdePassageiro()==Cliente.QtdePassageiro.QUATRO_A_CINCO_PESSOAS){
-			System.out.println("Capacidade de passageiros definida como -MEDIA");
+			System.out.println("Capacidade de passageiros definida como -QUATRO A CINCO OCUPANTES");
 			carro.setCapacidadePassageiros(Carros.CapacidadePassageiros.MEDIA_5_OCUPANTES);
-		}
-		System.out.println("Capacidade de passageiros definida como -ALTA");
-		carro.setCapacidadePassageiros(Carros.CapacidadePassageiros.ALTA_6_OU_MAIS_OCUPANTES);
-		
+				
 	}
 	
-	public DefineCapacidadeMediaAlta(Carros carro, Cliente cliente){
+	public DefineCapacidadeMediaAlta(Cliente cliente,Carros carro){
+		super();
 		this.carro = carro;
 		this.cliente = cliente;
 	}

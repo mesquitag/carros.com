@@ -18,7 +18,7 @@ public class DefineQtdePortasComum {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getFinalidade()==Cliente.Finalidade.DOMESTICO_PASSEIO){
+		if(cliente.getFinalidade()==cliente.getFinalidade().DOMESTICO_PASSEIO){
 			return true;
 		}
 		return false;
@@ -27,11 +27,12 @@ public class DefineQtdePortasComum {
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Quantidade de portas do carro definida - COMUM");
+		System.out.println("Quantidade de portas do carro definida - COMUM CINCO_PORTAS (MALA INCLUSA)");
 		carro.setQtdePortas(Carros.QtdePortas.CINCO_PORTAS);
 	}
 
-	public DefineQtdePortasComum(Cliente cliente, Carros carro){
+	public DefineQtdePortasComum(Cliente cliente,Carros carro){
+		super();
 		this.cliente = cliente;
 		this.carro = carro;
 	}

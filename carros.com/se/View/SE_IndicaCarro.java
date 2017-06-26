@@ -39,21 +39,21 @@ public class SE_IndicaCarro {
 	
 	public static void main(String[] args){
 		
-		Cliente cliente = new Cliente(Cliente.Categoria.HATCH,Cliente.Finalidade.DOMESTICO_PASSEIO,Cliente.QtdePassageiro.QUATRO_A_CINCO_PESSOAS,
-				Cliente.RendaMensal.MEDIA_ATE_4_SALARIOS,Cliente.TipoCombustivel.GASOLINA);
+		Cliente cliente = new Cliente(Cliente.Finalidade.DOMESTICO_PASSEIO,Cliente.QtdePassageiro.QUATRO_A_CINCO_PESSOAS,
+				Cliente.RendaMensal.COMUM_ATE_2_SALARIOS,Cliente.TipoCombustivel.FLEX_ETANOL_E_GASOLINA);
 		
 		Carros carro = new Carros();
 		
-		DefineCapacidadeMediaAlta defineCapacidadeMA = new DefineCapacidadeMediaAlta(carro, cliente);
+		DefineCapacidadeMediaAlta defineCapacidadeMA = new DefineCapacidadeMediaAlta(cliente, carro);
 		DefineCapacidadeBMA defineCapacidadeBMA = new DefineCapacidadeBMA(cliente, carro);
-		DefineCapacidadeAlta defineCapcidadeA = new DefineCapacidadeAlta(carro, cliente);
+		DefineCapacidadeAlta defineCapcidadeA = new DefineCapacidadeAlta(cliente, carro);
 		
-		DefineFinancaBaixa financaB = new DefineFinancaBaixa(carro, cliente);
-		DefineFinancaMedia financaM = new DefineFinancaMedia(carro, cliente);
-		DefineFinancaAlta financaA = new DefineFinancaAlta(carro, cliente);
+		DefineFinancaBaixa financaB = new DefineFinancaBaixa(cliente, carro);
+		DefineFinancaMedia financaM = new DefineFinancaMedia(cliente, carro);
+		DefineFinancaAlta financaA = new DefineFinancaAlta(cliente, carro);
 		
-		DefineFlexAbastecimentoDisponivel flexD = new DefineFlexAbastecimentoDisponivel(carro, cliente);
-		DefineFlexAbastecimentoIndisponivel flexI = new DefineFlexAbastecimentoIndisponivel(carro, cliente);
+		/*DefineFlexAbastecimentoDisponivel flexD = new DefineFlexAbastecimentoDisponivel(cliente, carro);
+		DefineFlexAbastecimentoIndisponivel flexI = new DefineFlexAbastecimentoIndisponivel(cliente, carro);*/
 		
 		DefineMotorComum motorC = new DefineMotorComum(cliente, carro);
 		DefineMotorForte motorF = new DefineMotorForte(cliente, carro);
@@ -63,21 +63,21 @@ public class SE_IndicaCarro {
 		DefineQtdePortasServico portasS = new DefineQtdePortasServico(cliente, carro);
 		DefineQtdePortasEsportivo portasE = new DefineQtdePortasEsportivo(cliente, carro);
 		
-		IndicaAirCross aircross= new IndicaAirCross(carro);
-		IndicaCarreraCoupe911 carrera = new IndicaCarreraCoupe911(carro);
-		IndicaCivic civic = new IndicaCivic(carro);
-		IndicaFiatDoblo doblo = new IndicaFiatDoblo(carro);
-		IndicaFordRanger ranger = new IndicaFordRanger(carro);
-		IndicaGolG6 gol = new IndicaGolG6(carro);
-		IndicaHB20 hb20 = new IndicaHB20(carro);
-		IndicaMercedesSprinter sprinter = new IndicaMercedesSprinter(carro);
-		IndicaPorscheBoxster porsche = new IndicaPorscheBoxster(carro);
-		IndicaRenaultMaster master = new IndicaRenaultMaster(carro);
-		IndicaSiena siena = new IndicaSiena(carro);
-		IndicaSpaceFox fox = new IndicaSpaceFox(carro);
-		IndicaSportage sportage = new IndicaSportage(carro);
-		IndicaStrada strada = new IndicaStrada(carro);
-		IndicaTucson tucson = new IndicaTucson(carro);
+		IndicaAirCross aircross= new IndicaAirCross(cliente,carro);
+		IndicaCarreraCoupe911 carrera = new IndicaCarreraCoupe911(cliente,carro);
+		IndicaCivic civic = new IndicaCivic(cliente,carro);
+		IndicaFiatDoblo doblo = new IndicaFiatDoblo(cliente,carro);
+		IndicaFordRanger ranger = new IndicaFordRanger(cliente,carro);
+		IndicaGolG6 gol = new IndicaGolG6(cliente,carro);
+		IndicaHB20 hb20 = new IndicaHB20(cliente,carro);
+		IndicaMercedesSprinter sprinter = new IndicaMercedesSprinter(cliente,carro);
+		IndicaPorscheBoxster porsche = new IndicaPorscheBoxster(cliente,carro);
+		IndicaRenaultMaster master = new IndicaRenaultMaster(cliente,carro);
+		IndicaSiena siena = new IndicaSiena(cliente,carro);
+		IndicaSpaceFox fox = new IndicaSpaceFox(cliente,carro);
+		IndicaSportage sportage = new IndicaSportage(cliente,carro);
+		IndicaStrada strada = new IndicaStrada(cliente,carro);
+		IndicaTucson tucson = new IndicaTucson(cliente,carro);
 		
 		RulesEngine rulesEngine = aNewRulesEngine().withSilentMode(true).build();
         RulesEngine rulesEngine2= aNewRulesEngine().withSilentMode(true).build();
@@ -91,8 +91,8 @@ public class SE_IndicaCarro {
         rulesEngine.registerRule(financaM);
         rulesEngine.registerRule(financaA);
         
-        rulesEngine.registerRule(flexD);
-        rulesEngine.registerRule(flexI);
+        /*rulesEngine.registerRule(flexD);
+        rulesEngine.registerRule(flexI);*/
         
         rulesEngine.registerRule(motorC);
         rulesEngine.registerRule(motorF);
@@ -119,10 +119,7 @@ public class SE_IndicaCarro {
         rulesEngine2.registerRule(strada);
         rulesEngine2.registerRule(tucson);
         rulesEngine2.fireRules();
-
-		
-		
-		
+         	
 	}
 
 }

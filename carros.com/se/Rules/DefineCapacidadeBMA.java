@@ -18,7 +18,7 @@ public class DefineCapacidadeBMA {
 	@Condition
 	public boolean when(){
 		
-		if(cliente.getQtdePassageiro() == Cliente.QtdePassageiro.DUAS_PESSOAS){
+		if(cliente.getQtdePassageiro() ==cliente.getQtdePassageiro().DUAS_PESSOAS){
 			return true;
 		}
 		return false;
@@ -27,12 +27,13 @@ public class DefineCapacidadeBMA {
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
 		
-		System.out.println("Capacidade de passageiros definida como - Baixa");
+		System.out.println("Capacidade de passageiros definida como - ATE 2 OCUPANTES");
 		carro.setCapacidadePassageiros(Carros.CapacidadePassageiros.BAIXA_ATE_2_OCUPANTES);
 				
 	}
 	
-	public DefineCapacidadeBMA(Cliente cliente, Carros carro){
+	public DefineCapacidadeBMA(Cliente cliente,Carros carro){
+		super();
 		this.cliente = cliente;
 		this.carro = carro;		
 	}

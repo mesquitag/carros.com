@@ -19,7 +19,7 @@ public class DefineFinancaAlta {
 	
 	public boolean when(){
 		
-		if(cliente.getRendaMensal()== Cliente.RendaMensal.ALTA_ACIMA_DE_4_SALARIOS){
+		if(cliente.getRendaMensal()== cliente.getRendaMensal().ALTA_ACIMA_DE_4_SALARIOS){
 			return true;
 		}
 		return false;
@@ -28,12 +28,13 @@ public class DefineFinancaAlta {
 	
 	@Action(order=1)
 	public void primeiraAcao()throws Exception{
-		System.out.println("Disponibilidade financeira para aluguel definida - ALTA");
+		System.out.println("Disponibilidade financeira para aluguel definida - ATE R$300 OU ACIMA");
 		carro.setDisponibilidadeFinaceira(Carros.DisponibilidadeFinanceira.ALTA_ATE_R$300_OU_ACIMA);
 
 	}
 	
-	public DefineFinancaAlta(Carros carro, Cliente cliente){
+	public DefineFinancaAlta(Cliente cliente,Carros carro){
+		super();
 		this.carro = carro;
 		this.cliente = cliente;
 	}
